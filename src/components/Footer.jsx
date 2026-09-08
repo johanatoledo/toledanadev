@@ -20,7 +20,7 @@ export default function Footer() {
   const socialBtnClass = "flex items-center justify-center w-9 h-9 rounded-full border-2 bg-transparent border-gray-300 dark:border-gray-800 text-gray-600 dark:text-gray-400 hover:text-accent dark:hover:text-primary hover:border-accent dark:hover:border-primary hover:bg-accent/5 dark:hover:bg-primary/5 transition-all duration-300 active:scale-95 transform hover:-translate-y-0.5 shrink-0";
 
   return (
-    <footer className="py-12 px-4 md:px-8 bg-white/70 dark:bg-background/40 text-black dark:text-secundary mt-12 transition-colors duration-300 backdrop-blur-md border-t border-gray-100 dark:border-gray-900 shadow-inner">
+    <footer className="py-12 px-4 md:px-8 bg-white/70 dark:bg-toledana-black/40 text-black dark:text-secundary mt-12 transition-colors duration-300 backdrop-blur-md border-t border-gray-100 dark:border-gray-900 shadow-inner">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         
         {/* LADO IZQUIERDO: Redes Sociales */}

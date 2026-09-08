@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image'; 
-import { MessageCircle } from "lucide-react";
+
 
 
 const projects = [
@@ -26,7 +26,7 @@ function ProjectCard({ proj }) {
    const mensajeCustom = `¡Hola! Me gustaría obtener mas informacion del servicio:*${projects.title}*`
    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensajeCustom)}`;
   return (
-    <div className="bg-white/90 dark:bg-[#111] rounded-2xl shadow-md hover:shadow-xl p-6 flex flex-col justify-between transition-all duration-300 border border-gray-100 dark:border-gray-800 group hover:-translate-y-1">
+    <div className="bg-toledana-white/90 dark:bg-toledana-black rounded-2xl shadow-md hover:shadow-xl p-6 flex flex-col justify-between transition-all duration-300 border border-gray-100 dark:border-gray-800 group hover:-translate-y-1">
       <div>
         {/* Contenedor de la imagen */}
         <div className="w-full h-44 relative rounded-xl mb-4 overflow-hidden border border-gray-200 dark:border-gray-800">
@@ -54,9 +54,8 @@ function ProjectCard({ proj }) {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-2 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border-2 border-gray-200 dark:border-gray-800 text-gray-700 dark:text-secundary font-mono text-sm font-semibold transition-all duration-300 hover:bg-black hover:text-white dark:hover:bg-primary dark:hover:text-black dark:hover:border-primary"
+        className="mt-2 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border-2 border-gray-200 dark:border-gray-800 text-gray-700 dark:text-secundary font-mono text-sm font-semibold transition-all duration-300 hover:bg-toledana-black hover:text-white dark:hover:bg-primary dark:hover:text-black dark:hover:border-primary"
       >
-        <MessageCircle size={18} />
         <span>Mas Informacion</span>
       </a>
     </div>
@@ -65,7 +64,7 @@ function ProjectCard({ proj }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-4 md:px-8 bg-white/95 dark:bg-background transition-colors duration-300">
+    <section id="projects" className="py-24 px-4 md:px-8 bg-white/95 dark:bg-toledana-black transition-colors duration-300">
       <div className="text-center mb-16">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-secundary mb-6 max-w-2xl mx-auto leading-snug">
           NUESTROS <span className="text-primary italic">SERVICIOS</span>

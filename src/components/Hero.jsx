@@ -129,7 +129,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden transition-colors duration-500 font-sans bg-secundary dark:bg-background"
+      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden transition-colors duration-500 font-sans bg-secundary dark:bg-toledana-black"
     >
       
       {mounted && (

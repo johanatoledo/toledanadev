@@ -41,7 +41,7 @@ export default function Navbar() {
   return (
     <>
       {/* Navbar principal */}
-      <nav className="fixed top-0 left-0 w-full z-40 flex items-center justify-between px-4 sm:px-4 py-2 bg-white/70 dark:bg-background/40 text-black dark:text-secundary transition-colors duration-300 backdrop-blur-md border-b border-gray-100 dark:border-gray-900 shadow-sm">
+      <nav className="fixed top-0 left-0 w-full z-40 flex items-center justify-between px-4 sm:px-4 py-2 bg-white/70 dark:bg-toledana-black/40 text-black dark:text-secundary transition-colors duration-300 backdrop-blur-md border-b border-gray-100 dark:border-gray-900 shadow-sm">
         
         {/* Logo */}
         <Link

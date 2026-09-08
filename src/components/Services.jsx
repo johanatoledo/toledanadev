@@ -47,7 +47,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="w-full py-24 px-4 md:px-6 bg-white dark:bg-background transition-colors duration-300 relative">
+    <section id="services" className="w-full py-24 px-4 md:px-6 bg-toledana-white dark:bg-toledana-black transition-colors duration-300 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-secundary mb-4">
@@ -70,11 +70,11 @@ const Services = () => {
               <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
 
               <div>
-                <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-slate-50 dark:bg-slate-900/50 text-primary border border-slate-100 dark:border-slate-800 group-hover:scale-110 group-hover:bg-primary group-hover:text-background transition-all duration-500 relative z-10">
+                <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-slate-50 dark:bg-slate-900/50 text-primary border border-slate-100 dark:border-slate-800 group-hover:scale-110 group-hover:bg-primary group-hover:text-toledana-black transition-all duration-500 relative z-10">
                   {service.icon}
                 </div>
 
-                <h3 className="text-lg font-bold mb-3 text-slate-800 dark:text-white group-hover:text-primary transition-colors duration-300 relative z-10">
+                <h3 className="text-lg font-bold mb-3 text-slate-800 dark:text-toledana-white group-hover:text-primary transition-colors duration-300 relative z-10">
                   {service.title}
                 </h3>
 
