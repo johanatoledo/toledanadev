@@ -2,42 +2,53 @@
 
 import React from 'react';
 import { 
-  UserCircle, 
-  Utensils, 
-  Scissors, 
+  Globe,
+  Code2,
+  MonitorSmartphone,
+  Bot,
   ShoppingBag,
   Layout
 } from 'lucide-react';
 
 const Services = () => {
   const servicesList = [
-    {
-      title: "Portafolios Digitales",
-      description: "Diseño exclusivo para profesionales que buscan destacar. Creamos una vitrina digital de alto impacto que proyecta confianza.",
-      icon: <UserCircle className="w-8 h-8" />
-    },
-    {
-      title: "Sistemas para Restaurantes",
-      description: "Digitaliza tu menú y gestiona pedidos sin pagar comisiones a terceros. Control de mesas, stock y ventas desde un panel privado.",
-      icon: <Utensils className="w-8 h-8" />
-    },
-    {
-      title: "Salones de Belleza y Barberías",
-      description: "Implementamos agendas inteligentes donde tus clientes reservan su turno online, optimizando el tiempo de tus estilistas.",
-      icon: <Scissors className="w-8 h-8" />
-    },
-    {
-      title: "Tiendas Online (E-commerce)",
-      description: "Lleva tu tienda al mundo digital. Catálogo de productos con carrito de compras y conexión directa a pasarelas de pago.",
-      icon: <ShoppingBag className="w-8 h-8" />
-    },
-     {
-      title: "Catálogos Digitales",
-      description: "Sustituye los PDF pesados por una Web App visual y fluida. Ideal para muestras de productos con carga ultra rápida.",
-      icon: <Layout className="w-8 h-8" />
-    },
-
-  ];
+  {
+    title: "Desarrollo Web",
+    description:
+      "Diseñamos y desarrollamos sitios web modernos, rápidos y adaptables que fortalecen la presencia digital de tu negocio y convierten visitas en oportunidades.",
+    icon: <Globe className="w-8 h-8" />
+  },
+  {
+    title: "Software a Medida",
+    description:
+      "Creamos sistemas personalizados que se adaptan a los procesos de tu empresa para mejorar la gestión, automatizar tareas y optimizar resultados.",
+    icon: <Code2 className="w-8 h-8" />
+  },
+  {
+    title: "Aplicaciones Web",
+    description:
+      "Desarrollamos aplicaciones web escalables y accesibles desde cualquier dispositivo, enfocadas en resolver necesidades reales de tu negocio.",
+    icon: <MonitorSmartphone className="w-8 h-8" />
+  },
+  {
+    title: "Comercio Electrónico",
+    description:
+      "Construimos tiendas online modernas y funcionales que facilitan la gestión de productos, pedidos y ventas, ofreciendo una experiencia de compra fluida.",
+    icon: <ShoppingBag className="w-8 h-8" />
+  },
+  {
+    title: "Soluciones Digitales",
+    description:
+      "Convertimos productos, servicios y procesos tradicionales en experiencias digitales intuitivas, rápidas y optimizadas para tus clientes.",
+    icon: <Layout className="w-8 h-8" />
+  },
+  {
+    title: "Automatización e IA",
+    description:
+      "Integramos automatización e inteligencia artificial para optimizar procesos, reducir tareas repetitivas y mejorar la eficiencia de tu negocio.",
+    icon: <Bot className="w-8 h-8" />
+  },
+];
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -49,18 +60,8 @@ const Services = () => {
   return (
     <section id="services" className="w-full py-24 px-4 md:px-6 bg-toledana-white dark:bg-toledana-black transition-colors duration-300 relative">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-secundary mb-4">
-            <span className="text-primary italic">Nuestros Servicios</span>
-          </h2>
-          <div className="h-1.5 w-24 bg-accent mx-auto rounded-full"></div>
-
-          <h3 className="mt-6 text-xl md:text-2xl font-medium text-slate-700 dark:text-secundary leading-relaxed max-w-3xl mx-auto">
-            Soluciones web a medida diseñadas para destacar tu marca y escalar tu negocio.
-          </h3>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {servicesList.map((service, index) => (
             <div
               key={index}

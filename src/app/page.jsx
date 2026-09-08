@@ -9,10 +9,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      
-      
       <DynamicDescription />
-      
       <Services />
       <Projects />
       

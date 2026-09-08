@@ -70,6 +70,9 @@ export default function Projects() {
           NUESTROS <span className="text-primary italic">SERVICIOS</span>
         </h2>
         <div className="h-1 w-20 bg-accent mx-auto rounded-full shadow-[0_0_8px_rgba(255,0,60,0.6)]"></div>
+        <h3 className="mt-6 text-xl md:text-2xl font-medium text-slate-700 dark:text-secundary leading-relaxed max-w-3xl mx-auto">
+            Soluciones web a medida diseñadas para destacar tu marca y escalar tu negocio.
+          </h3>
       </div>
       
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">

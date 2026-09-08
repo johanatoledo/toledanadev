@@ -41,22 +41,22 @@ export default function Navbar() {
   return (
     <>
       {/* Navbar principal */}
-      <nav className="fixed top-0 left-0 w-full z-40 flex items-center justify-between px-4 sm:px-4 py-2 bg-white/70 dark:bg-toledana-black/40 text-black dark:text-secundary transition-colors duration-300 backdrop-blur-md border-b border-gray-100 dark:border-gray-900 shadow-sm">
-        
-        {/* Logo */}
-        <Link
-          href="/#home"
-          className="flex items-center select-none group focus:outline-none shrink-0"
-        >
-          <Image
-            src="/branding/logotoledana.webp"
-            alt="ToledanaDev"
-            width={100}
-            height={40}
-            className="object-contain w-36 min-[390px]:w-44 sm:w-48 md:w-56 h-auto transition-transform duration-300 group-hover:scale-102 brightness-100 dark:brightness-110"
-            priority
-          />
-        </Link>
+    <nav className="fixed top-0 left-0 w-full z-40 flex items-center justify-between px-4 sm:px-6 py-1.5 bg-toledana-white/80 dark:bg-toledana-black/10 text-black dark:text-secundary transition-colors duration-300 backdrop-blur-md border-b border-gray-100 dark:border-gray-900 shadow-sm">
+
+  {/* Logo */}
+  <Link
+    href="/#home"
+    className="flex items-center select-none group focus:outline-none shrink-0"
+  >
+    <Image
+      src="/branding/logotoledana.webp"
+      alt="ToledanaDev"
+      width={160}
+      height={48}
+      className="object-contain w-28 sm:w-32 md:w-36 h-auto transition-transform duration-300 group-hover:scale-102 brightness-100 dark:brightness-110"
+      priority
+    />
+  </Link>
 
         {/* Menú de navegación y controles */}
         <div className="flex items-center gap-3 md:gap-6">
