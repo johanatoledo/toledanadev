@@ -171,7 +171,7 @@ const Hero = () => {
           <div className="relative w-full max-w-[320px] md:max-w-full flex justify-center" style={{ perspective: 1200 }}>
             <div ref={robotRef} style={{ willChange: 'transform' }} className="animate-float w-full h-auto max-h-87.5 md:max-h-137.5 relative">
               <Image
-                src="/images/robot-IA-transp.webp"
+                src="/branding/robot-IA-transp.webp"
                 alt="Robot IA"
                 width={550}  
                 height={550} 
