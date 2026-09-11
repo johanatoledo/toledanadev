@@ -66,7 +66,7 @@ export default function ProjectShowcase({ projects }) {
               )}
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-lineal-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
 
               {/* Controles */}
               <button

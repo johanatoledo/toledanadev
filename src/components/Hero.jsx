@@ -153,17 +153,16 @@ const Hero = () => {
       <div className="relative z-20 flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-6xl mx-auto px-6 gap-8">
 
         {/* LADO IZQUIERDO: TEXTO */}
-        <div className="w-full md:w-1/2 text-center md:text-left flex flex-col items-center md:items-start">
+        <div className="w-full md:w-1/2 text-justify md:text-left flex flex-col items-center md:items-start">
           <span className="inline-block px-4 py-1 border border-primary/30 rounded-full text-primary text-[8px] sm:text-xs font-mono mb-6 tracking-[0.2em] uppercase bg-primary/5">
-            Desarrollo Web & Software a Medida
+            Páginas Web - Aplicaciones & Sistemas Personalizados 
           </span>
 
-          <h1 className="text-2xl sm:text-2xl lg:text-2xl leading-[1.1] mb-6 text-background dark:text-secundary">
-              <span className="text-accent italic">Páginas Web - Aplicaciones & Sistemas</span>
-                <span className="text-primary "> personalizados para ayudar a tu negocio a crecer,</span>
-                 <span className="text-primary italic">automatizar procesos y vender mejor.</span>
+          <h1 className="text-4xl text-center sm:text-2xl lg:text-3xl leading-[1.1] mb-6 text-background dark:text-secundary">
+              <span className="text-primary ">Ayuda a tu negocio a <strong className="text-accent italic">Crecer,</strong></span>
+              <span className="text-primary">automatiza procesos y <strong className="text-accent italic">Vende</strong> mejor.</span>
           </h1>
-
+ 
           
         </div>
 
