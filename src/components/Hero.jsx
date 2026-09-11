@@ -155,17 +155,14 @@ const Hero = () => {
         {/* LADO IZQUIERDO: TEXTO */}
         <div className="w-full md:w-1/2 text-center md:text-left flex flex-col items-center md:items-start">
           <span className="inline-block px-4 py-1 border border-primary/30 rounded-full text-primary text-[8px] sm:text-xs font-mono mb-6 tracking-[0.2em] uppercase bg-primary/5">
-            Desarrollo Web & IA
+            Desarrollo Web & Software a Medida
           </span>
 
-          <h1 className="text-2xl sm:text-2xl lg:text-5xl leading-[1.1] mb-6 text-background dark:text-secundary">
-            <span className="text-primary italic">Transformo tus ideas en </span>
-                <span className="text-accent italic">Soluciones de alto impacto</span>
+          <h1 className="text-2xl sm:text-2xl lg:text-2xl leading-[1.1] mb-6 text-background dark:text-secundary">
+              <span className="text-accent italic">Páginas Web - Aplicaciones & Sistemas</span>
+                <span className="text-primary "> personalizados para ayudar a tu negocio a crecer,</span>
+                 <span className="text-primary italic">automatizar procesos y vender mejor.</span>
           </h1>
-
-          <p className="text-base sm:text-lg mb-10 max-w-md lg:max-w-lg leading-relaxed text-background/70 dark:text-secundary/60">
-            <strong className="font-semibold ml-1 uppercase tracking-tighter">Especialista en plataformas de alta conversión e integración de Agentes de IA.</strong>
-          </p>
 
           
         </div>

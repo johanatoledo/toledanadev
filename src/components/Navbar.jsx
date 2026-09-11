@@ -32,7 +32,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Inicio", href: "/#home" },
     { name: "Servicios", href: "/#services" },
-    { name: "Contacto", href: "/#contact" },
+  
   ];
 
   const controlBtnClass =
