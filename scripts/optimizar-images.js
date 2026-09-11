@@ -7,7 +7,7 @@ import ffmpegPath from "ffmpeg-static";
 
 const execFileAsync = promisify(execFile);
 
-const inputDir = path.resolve("./public/projects");
+const inputDir = path.resolve("./public/image");
 const outputDir = path.resolve("./public-optimized");
 
 const imageExtensions = [".jpg", ".jpeg", ".png"];

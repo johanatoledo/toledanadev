@@ -118,8 +118,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className={plusJakartaSans.variable}>
-      <body className="min-h-screen font-sans antialiased selection:bg-primary/30">
+    <html lang="es" className={`dark ${plusJakartaSans.variable}`} style={{ colorScheme: 'dark' }}>
+      <body className="min-h-screen font-sans antialiased selection:bg-primary/30 bg-toledana-black">
        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
