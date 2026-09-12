@@ -73,7 +73,7 @@ export default function ProjectShowcase({ projects }) {
                 type="button"
                 onClick={previousProject}
                 aria-label="Proyecto anterior"
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-primary hover:text-black"
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-primary backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-primary hover:text-black"
               >
                 <ChevronLeft size={22} />
               </button>
@@ -82,7 +82,7 @@ export default function ProjectShowcase({ projects }) {
                 type="button"
                 onClick={nextProject}
                 aria-label="Siguiente proyecto"
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-primary hover:text-black"
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-primary backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-primary hover:text-black"
               >
                 <ChevronRight size={22} />
               </button>

@@ -127,15 +127,25 @@ export default function Navbar() {
 
       {/* Menú lateral móvil */}
       <div
-        className={`fixed top-0 right-0 h-screen w-[80%] sm:w-[60%] max-w-75 bg-white/95 dark:bg-background/95 backdrop-blur-lg z-40 border-l border-gray-200 dark:border-gray-900 p-6 pt-24 shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 right-0 h-screen w-[80%] sm:w-[60%] max-w-75 bg-toledana-white/60 dark:bg-toledana-black/5 backdrop-blur-lg z-40 border-l border-gray-200 dark:border-gray-900 p-6 pt-24 shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-in-out md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
+        {/* Botón de cierre X */}
+           <button
+             onClick={() => setIsOpen(false)}
+             className="absolute top-6 right-6 p-2 text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-primary transition-colors md:hidden"
+             aria-label="Cerrar menú"
+          >
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
         <ul className="flex flex-col gap-6 text-lg font-semibold">
           {navLinks.map((link) => (
             <li
               key={link.name}
-              className="border-b border-gray-100 dark:border-gray-900 pb-3"
+              className="border-b border-gray-100 dark:border-accent pb-3"
             >
               <Link
                 href={link.href}

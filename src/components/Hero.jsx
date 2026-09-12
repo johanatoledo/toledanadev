@@ -158,8 +158,8 @@ const Hero = () => {
             Páginas Web - Aplicaciones & Sistemas Personalizados 
           </span>
 
-          <h1 className="text-4xl text-center sm:text-2xl lg:text-3xl leading-[1.1] mb-6 text-background dark:text-secundary">
-              <span className="text-primary ">Ayuda a tu negocio a <strong className="text-accent italic">Crecer,</strong></span>
+          <h1 className="text-2xl text-center sm:text-3xl lg:text-4xl leading-[1.1] mb-6 text-background dark:text-secundary">
+              <span className="text-primary ">Ayuda a tu negocio a <strong className="text-accent italic">Crecer </strong></span>
               <span className="text-primary">automatiza procesos y <strong className="text-accent italic">Vende</strong> mejor.</span>
           </h1>
  
