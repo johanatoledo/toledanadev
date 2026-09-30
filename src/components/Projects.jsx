@@ -1,57 +1,6 @@
 import ProjectShowcase from "./ProjectShowcase";
+import { projects } from "../data/projects"
 
-const projects = [
-  {
-    title: "Catálogo Digital",
-    client: "Juliana Nail Art",
-    description:
-      "Catálogo digital diseñado para presentar servicios y productos de forma visual, rápida y accesible desde cualquier dispositivo.",
-    video: "/projects/juliana/videojulianaweb.webm",
-    images: [
-      "/projects/juliana/juliana1.webp",
-      "/projects/juliana/juliana2.webp",
-      "/projects/juliana/juliana3.webp",
-    ],
-  },
-
-  {
-    title: "CleanPro Services",
-    client: "Cleaning Company",
-    description:
-      "Sitio web profesional diseñado para fortalecer la presencia digital de la empresa y facilitar la captación de nuevos clientes.",
-    video: "/projects/pristines/videopristines.webm",
-    images: [
-      "/projects/pristines/pristines1.webp",
-      "/projects/pristines/pristines2.webp",
-      "/projects/pristines/pristines3.webp",
-    ],
-  },
-
-  {
-    title: "Sistema Reservas IA",
-    client: "Restaurant · Lima, Perú",
-    description:
-      "Sistema completo para  restaurantes con asistente IA y panel administrativo con monitoreo en tiempo real.Agenda citas  24/7",
-    video: "/projects/limenita/videolimenita.webm",
-    images: [
-      "/projects/limenita/limenita1.webp",
-      "/projects/limenita/limenita2.webp",
-      "/projects/limenita/limenita4.webp",
-    ],
-  },
-  {
-    title: "Menu QR automatizado",
-    client: "Restaurant · Lima, Perú",
-    description:
-      "Solución digital para presentar productos, facilitar pedidos y ofrecer a los clientes una experiencia de compra rápida y sencilla.Incluye panel administrativo para monitoreo en tiempo real",
-    video: "/projects/cafetoledana/videocafe.webm",
-    images: [
-      "/projects/cafetoledana/cafetoledana1.webp",
-      "/projects/cafetoledana/cafetoledana2.webp",
-      "/projects/cafetoledana/cafetoleda3.webp",
-    ],
-  },
-];
 
 export default function Projects() {
   return (
