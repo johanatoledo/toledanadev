@@ -10,25 +10,6 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-toledana",
 });
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "ToledanaDev",
-  url: "https://toledanadev.com",
-  description:
-    "Desarrollo web, software a medida y soluciones digitales para negocios.",
-  areaServed: {
-    "@type": "Country",
-    name: "Perú",
-  },
-  serviceType: [
-    "Desarrollo Web",
-    "Desarrollo de Software",
-    "Aplicaciones Web",
-    "Automatización",
-    "Inteligencia Artificial",
-  ],
-};
 
 
 export const metadata = {
@@ -55,6 +36,9 @@ export const metadata = {
     "desarrollo web Perú",
     "desarrollo web Lima",
     "soluciones digitales",
+    "catalogos digitales",
+    "tiendas online",
+    "e-commerce",
   ],
 
   authors: [
@@ -120,12 +104,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" className={`dark ${plusJakartaSans.variable}`} style={{ colorScheme: 'dark' }}>
       <body className="min-h-screen font-sans antialiased selection:bg-primary/30 bg-toledana-black">
-       <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd),
-          }}
-        />
+      
         <Providers>
           <Navbar />
 
