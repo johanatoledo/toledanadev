@@ -22,7 +22,7 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/contact`,
+      url: `${baseUrl}/contacto`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

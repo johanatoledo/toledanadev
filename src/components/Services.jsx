@@ -50,7 +50,7 @@ export default function Services() {
                 </div>
 
                 <Link
-                  href="/contact"
+                  href="/contacto"
                   className="relative z-10 inline-flex items-center text-xs font-bold uppercase tracking-widest text-accent transition-colors hover:text-primary"
                   aria-label={`Consultar sobre ${service.title}`}
                 >

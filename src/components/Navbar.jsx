@@ -7,9 +7,9 @@ import { useDarkMode } from "../context/DarkModeContext";
 
 const navLinks = [
   { name: "Inicio", href: "/",},
-  { name: "Servicios", href: "/services",},
+  { name: "Servicios", href: "/servicios",},
   { name: "Blog", href: "/blog",},
-  { name: "Contacto", href: "/contact",},
+  { name: "Contacto", href: "/contacto",},
 ];
 
 export default function Navbar() {
