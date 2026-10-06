@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://toledanadev.com";
+  const baseUrl = "https://www.toledanadev.com";
 
   return [
     {

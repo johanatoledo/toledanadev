@@ -5,7 +5,7 @@ export default function robots() {
       allow: "/",
     },
 
-    sitemap: "https://toledanadev.com/sitemap.xml",
+    sitemap: "https://www.toledanadev.com/sitemap.xml",
   };
 }
 

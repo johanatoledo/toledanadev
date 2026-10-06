@@ -13,7 +13,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 
 export const metadata = {
-  metadataBase: new URL("https://toledanadev.com"),
+  metadataBase: new URL("https://www.toledanadev.com"),
 
   title: {
     default: "ToledanaDev | Desarrollo Web y Software a Medida",
@@ -44,7 +44,7 @@ export const metadata = {
   authors: [
     {
       name: "ToledanaDev",
-      url: "https://toledanadev.com",
+      url: "https://www.toledanadev.com",
     },
   ],
 
@@ -64,14 +64,14 @@ export const metadata = {
   },
 
   alternates: {
-    canonical: "https://toledanadev.com",
+    canonical: "https://www.toledanadev.com",
   },
 
   openGraph: {
     title: "ToledanaDev | Desarrollo Web y Software a Medida",
     description:
       "Creamos sitios web, aplicaciones y soluciones de software a medida para ayudar a los negocios a crecer y mejorar sus procesos.",
-    url: "https://toledanadev.com",
+    url: "https://www.toledanadev.com",
     siteName: "ToledanaDev",
     locale: "es_PE",
     type: "website",
