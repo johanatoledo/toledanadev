@@ -7,7 +7,7 @@ export const metadata = {
     "Cuéntanos qué proceso quieres digitalizar. En ToledanaDev desarrollamos páginas web, software a medida, aplicaciones web, automatizaciones y soluciones con inteligencia artificial.",
 
   alternates: {
-    canonical: "https://toledanadev.com/contact",
+    canonical: "https://www.toledanadev.com/contact",
   },
 };
 

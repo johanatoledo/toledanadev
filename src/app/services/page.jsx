@@ -7,7 +7,7 @@ export const metadata = {
     "Conoce los servicios de ToledanaDev: desarrollo web, software a medida, aplicaciones web, comercio electrónico, automatización e inteligencia artificial.",
 
   alternates: {
-    canonical: "https://toledanadev.com/services",
+    canonical: "https://www.toledanadev.com/services",
   },
 };
 
