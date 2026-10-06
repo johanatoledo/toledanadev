@@ -8,3 +8,5 @@ export default function robots() {
     sitemap: "https://toledanadev.com/sitemap.xml",
   };
 }
+
+
