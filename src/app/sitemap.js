@@ -16,7 +16,7 @@ export default function sitemap() {
     },
 
     {
-      url: `${baseUrl}/services`,
+      url: `${baseUrl}/servicios`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
