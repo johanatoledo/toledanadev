@@ -1,15 +1,9 @@
 const CONTACT_ENDPOINT = "/api/contact";
-
 const REQUEST_TIMEOUT_MS = 15_000;
 
 export class ContactRequestError extends Error {
-  constructor(
-    message,
-    {
-      status = 500,
-      fieldErrors = {},
-    } = {}
-  ) {
+  constructor( message, { status = 500, fieldErrors = {}, } = {} )
+   {
     super(message);
 
     this.name = "ContactRequestError";
@@ -45,9 +39,7 @@ export async function sendContactRequest(payload) {
       : null;
 
     if (!response.ok) {
-      throw new ContactRequestError(
-        data?.message ??
-          "No pudimos procesar tu solicitud.",
+      throw new ContactRequestError( data?.message ?? "No pudimos procesar tu solicitud.",
         {
           status: response.status,
           fieldErrors: data?.fieldErrors ?? {},
@@ -56,9 +48,7 @@ export async function sendContactRequest(payload) {
     }
 
     if (!data?.ok) {
-      throw new ContactRequestError(
-        data?.message ??
-          "El servidor devolvió una respuesta no válida.",
+      throw new ContactRequestError( data?.message ?? "El servidor devolvió una respuesta no válida.",
         {
           status: response.status,
         }
@@ -67,12 +57,9 @@ export async function sendContactRequest(payload) {
 
     return data;
   } catch (error) {
-    if (
-      error instanceof DOMException &&
-      error.name === "AbortError"
-    ) {
-      throw new ContactRequestError(
-        "La solicitud tardó demasiado. Intenta nuevamente.",
+    if ( error instanceof DOMException && error.name === "AbortError")
+     {
+      throw new ContactRequestError( "La solicitud tardó demasiado. Intenta nuevamente.",
         {
           status: 408,
         }

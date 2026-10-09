@@ -1,10 +1,4 @@
-import {
-  Code2,
-  MessagesSquare,
-  Workflow,
-  ArrowRight,
-} from "lucide-react";
-
+import { Code2, MessagesSquare, Workflow, ArrowRight, } from "lucide-react";
 import ContactForm from "./ContactForm";
 
 const processSteps = [

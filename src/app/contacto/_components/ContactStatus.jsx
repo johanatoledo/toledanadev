@@ -1,14 +1,12 @@
 import { CircleCheck, TriangleAlert, } from "lucide-react";
 
-export default function ContactStatus({
-  status,
-}) {
+export default function ContactStatus({ status, }) {
+  
   if ( status.type === "idle" || status.type === "loading" ) {
     return null;
   }
 
   const isSuccess = status.type === "success";
-
   const Icon = isSuccess ? CircleCheck : TriangleAlert;
 
   return (
