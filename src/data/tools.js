@@ -5,7 +5,7 @@ export const TOOLS = [
     title: "Calculadora de precios y ganancias",
     description:
       "Calcula el precio de venta de tus productos considerando costos, gastos y margen de ganancia.",
-    href: "/herramientas/calculadora-precios",
+    href: "/herramientas/calculadora-de-precios",
     icon: "calculator",
     category: "Precios y rentabilidad",
     status: "disponible",
