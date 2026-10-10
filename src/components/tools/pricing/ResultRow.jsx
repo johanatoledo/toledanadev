@@ -17,7 +17,7 @@ export default function ResultRow({ label, value, highlight = false,negative = f
       </span>
 
       <span
-        className={`max-w-[55%] wrap-break-word  text-right text-sm font-semibold tabular-nums ${valueColor}`}
+        className= {`max-w-[55%] wrap-break-word  text-right text-sm font-semibold tabular-nums ${valueColor}`}
       >
         {value}
       </span>

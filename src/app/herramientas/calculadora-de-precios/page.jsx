@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, Info, Calculator, ReceiptText, Tre
 import PriceCalculator from "@/components/tools/pricing/PriceCalculator";
 
 
-const PAGE_URL = "https://www.toledanadev.com/herramientas/calculadora-precios";
+const PAGE_URL = "https://www.toledanadev.com/herramientas/calculadora-de-precios";
 const PAGE_TITLE = "Calculadora de Precios de Venta y Ganancias Gratis";
 const PAGE_DESCRIPTION = "Calcula gratis precios de venta y ganancias en Perú. Incluye costos, gastos generales, comisiones, IGV y estimaciones de impuestos.";
 

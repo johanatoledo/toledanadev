@@ -1,6 +1,9 @@
 
 import { AlertCircle } from "lucide-react";
 import { PRICING_STYLES } from "@/data/pricingFields";
+
+
+
 export default function TaxOptions({ applyIgv, purchaseTaxCredit, errors = {}, onIgvChange, onCreditChange, }) {
   return (
     <div className="space-y-5 rounded-xl border border-toledana-black/10 bg-toledana-white p-5 dark:border-primary/20 dark:bg-primary/5">

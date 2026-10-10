@@ -33,9 +33,8 @@ function parseDecimal(value, max) {
 
   const number = Number(normalized);
 
-  return Number.isFinite(number) && number <= max
-    ? number
-    : NaN;
+  return Number.isFinite(number) && number <= max    ? number  : NaN;
+
 }
 
 export function parseAmount(value) {
@@ -96,11 +95,7 @@ export function validatePricingInput(input) {
 
   const units = Number(input.expectedUnits);
 
-  if (
-    !/^[1-9]\d*$/.test(String(input.expectedUnits)) ||
-    !Number.isSafeInteger(units) ||
-    units > MAX_UNITS
-  ) {
+  if ( !/^[1-9]\d*$/.test(String(input.expectedUnits)) || !Number.isSafeInteger(units) || units > MAX_UNITS) {
     errors.expectedUnits = "Ingresa entre 1 y 1,000,000 unidades.";
   }
 
@@ -112,10 +107,7 @@ export function validatePricingInput(input) {
     errors.purchaseTaxCredit = "Selecciona el tratamiento de compras.";
   }
 
-  if (
-    input.purchaseTaxCredit === true &&
-    input.applyIgv !== true
-  ) {
+  if ( input.purchaseTaxCredit === true && input.applyIgv !== true) {
     errors.purchaseTaxCredit =
       "El crédito fiscal simplificado requiere una venta gravada.";
   }
@@ -144,65 +136,34 @@ export function calculatePricing(input) {
   const overheadMonthlyCents = cents("overheadMonthly");
   const expectedUnits = Number(input.expectedUnits);
 
-  const marginUnits = percentUnits(
-    parsePercentage(input.desiredMargin)
-  );
-  const commissionUnits = percentUnits(
-    parsePercentage(input.percentageFee)
-  );
-  const incomeTaxUnits = percentUnits(
-    parsePercentage(input.incomeTaxRate)
-  );
+  const marginUnits = percentUnits( parsePercentage(input.desiredMargin) );
+  const commissionUnits = percentUnits( parsePercentage(input.percentageFee) );
+  const incomeTaxUnits = percentUnits( parsePercentage(input.incomeTaxRate) );
 
   // Solo el costo de compra se considera con IGV incluido.
   // El crédito fiscal es una hipótesis declarada por el usuario.
-  const purchaseNetCents = input.purchaseTaxCredit
-    ? roundRatio(purchaseGrossCents * 100, 118)
-    : purchaseGrossCents;
-
-  const purchaseIgvCreditCents =
-    purchaseGrossCents - purchaseNetCents;
+  const purchaseNetCents = input.purchaseTaxCredit ? roundRatio(purchaseGrossCents * 100, 118) : purchaseGrossCents;
+  const purchaseIgvCreditCents = purchaseGrossCents - purchaseNetCents;
 
   // Prorrateo conservador de los gastos generales.
-  const overheadPerUnitCents = Math.ceil(
-    overheadMonthlyCents / expectedUnits
-  );
+  const overheadPerUnitCents = Math.ceil( overheadMonthlyCents / expectedUnits );
 
-  const totalCostCents =
-    purchaseNetCents +
-    packagingCents +
-    transportCents +
-    otherCostsCents +
-    overheadPerUnitCents;
+  const totalCostCents = purchaseNetCents + packagingCents + transportCents + otherCostsCents + overheadPerUnitCents;
 
   function evaluate(netPriceCents) {
     // Precio neto + IGV de la venta.
-    const outputIgvCents = input.applyIgv
-      ? roundRatio(netPriceCents * 18, 100)
-      : 0;
-
+    const outputIgvCents = input.applyIgv ? roundRatio(netPriceCents * 18, 100) : 0;
     const salePriceCents = netPriceCents + outputIgvCents;
 
     // Comisión sobre el importe efectivamente cobrado.
-    const variableFeeCents = roundRatio(
-      salePriceCents * commissionUnits,
-      10_000
-    );
+    const variableFeeCents = roundRatio( salePriceCents * commissionUnits, 10_000 );
+    const totalFeesCents = variableFeeCents + fixedFeeCents;
 
-    const totalFeesCents =
-      variableFeeCents + fixedFeeCents;
-
-    const operatingProfitCents =
-      netPriceCents - totalCostCents - totalFeesCents;
+    const operatingProfitCents = netPriceCents - totalCostCents - totalFeesCents;
 
     // Es una estimación de IR, no un cálculo fiscal oficial.
-    const estimatedIncomeTaxCents = roundRatio(
-      Math.max(0, operatingProfitCents) * incomeTaxUnits,
-      10_000
-    );
-
-    const netProfitCents =
-      operatingProfitCents - estimatedIncomeTaxCents;
+    const estimatedIncomeTaxCents = roundRatio( Math.max(0, operatingProfitCents) * incomeTaxUnits, 10_000 );
+    const netProfitCents = operatingProfitCents - estimatedIncomeTaxCents;
 
     return {
       netPriceCents,
@@ -225,16 +186,12 @@ export function calculatePricing(input) {
 
     // Comparación exacta a la precisión del modelo,
     // sin dividir porcentajes.
-    return (
-      result.netProfitCents * 10_000 >=
-      priceCents * marginUnits
-    );
+    return ( result.netProfitCents * 10_000 >= priceCents * marginUnits );
   }
 
   // Búsqueda acotada del precio neto mínimo.
   // Se evita un while sin límites de ejecución.
-  const upperBound =
-    MAX_PRICE_CENTS - Math.ceil(MAX_PRICE_CENTS * 18 / 118);
+  const upperBound = MAX_PRICE_CENTS - Math.ceil(MAX_PRICE_CENTS * 18 / 118);
 
   let low = 1;
   let high = upperBound;
@@ -266,16 +223,13 @@ export function calculatePricing(input) {
     });
   }
 
-  const actualMargin =
-    (selected.netProfitCents / selected.netPriceCents) * 100;
+  const actualMargin = (selected.netProfitCents / selected.netPriceCents) * 100;
 
-  const markup =
-    totalCostCents > 0
+  const markup = totalCostCents > 0
       ? (selected.netProfitCents / totalCostCents) * 100
       : 0;
 
-  const estimatedIgvBalanceCents =
-    selected.outputIgvCents - purchaseIgvCreditCents;
+  const estimatedIgvBalanceCents = selected.outputIgvCents - purchaseIgvCreditCents;
 
   return {
     ok: true,
