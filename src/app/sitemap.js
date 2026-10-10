@@ -39,5 +39,17 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+     {
+      url: `${baseUrl}/herramientas`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/herramientas/calculadora-de-precios`,
+      lastModified: new Date("2026-10-10"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 }
