@@ -192,7 +192,7 @@ export async function POST(request) {
       subject:
         `Nueva solicitud: ${getServiceName(service)} - ${name}`,
 
-      html: createContactEmail({ name, email, business, service, message, }),
+      html: createContactEmail({ name, email, business, service,plan,  message, }),
     });
 
     if (error) {
