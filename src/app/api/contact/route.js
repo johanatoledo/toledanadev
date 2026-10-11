@@ -174,7 +174,7 @@ export async function POST(request) {
       );
     }
 
-    const { name,  email, business, service, message, } = validation.data;
+    const { name,  email, business, service, plan, message, } = validation.data;
 
     /*
      * 7. Envío del correo.
