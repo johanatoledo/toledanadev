@@ -1,53 +1,62 @@
-import {
-  Globe,
-  Code2,
-  MonitorSmartphone,
-  Bot,
-  ShoppingBag,
-  Layout,
-} from "lucide-react";
+
+import { BookOpen, Globe, ShoppingBag, CalendarDays, Bot, MonitorSmartphone, Code2, } from "lucide-react";
 
 export const servicesList = [
   {
-    id: "desarrollo-web",
-    title: "Desarrollo Web",
+    id: "catalogos-digitales",
+    title: "Catálogos Digitales",
     description:
-      "Diseñamos y desarrollamos sitios web profesionales, rápidos y optimizados para dispositivos móviles, enfocados en fortalecer tu presencia digital, transmitir confianza y convertir visitantes en potenciales clientes.",
+      "Catálogos personalizados para mostrar tus productos, organizar categorías y recibir pedidos. Disponibles con o sin panel administrativo.",
+    icon: BookOpen,
+    planKey: "catalogoEsencial",
+    featured: true,
+  },
+  {
+    id: "paginas-web",
+    title: "Páginas Web",
+    description:
+      "Landing pages, sitios corporativos y blogs profesionales para fortalecer tu presencia digital y atraer nuevos clientes.",
     icon: Globe,
+    planKey: "landingPage",
   },
   {
-    id: "software-medida",
-    title: "Software a Medida",
+    id: "tiendas-online",
+    title: "Tiendas Online",
     description:
-      "Desarrollamos sistemas personalizados según los procesos reales de tu empresa para centralizar información, mejorar la gestión, reducir tareas manuales y aumentar la eficiencia operativa.",
-    icon: Code2,
-  },
-  {
-    id: "aplicaciones-web",
-    title: "Aplicaciones Web",
-    description:
-      "Creamos aplicaciones web modernas, seguras y escalables para gestionar operaciones, clientes, reservas, pedidos, servicios y otros procesos desde cualquier dispositivo.",
-    icon: MonitorSmartphone,
-  },
-  {
-    id: "comercio-electronico",
-    title: "Comercio Electrónico",
-    description:
-      "Desarrollamos tiendas online profesionales con catálogos de productos, gestión de pedidos, pagos y herramientas administrativas que facilitan la venta y gestión de tu negocio por internet.",
+      "Tiendas e-commerce con catálogo, carrito, proceso de compra, pagos y gestión de pedidos según las necesidades del negocio.",
     icon: ShoppingBag,
+    planKey: "ecommerce",
   },
   {
-    id: "soluciones-digitales",
-    title: "Soluciones Digitales",
+    id: "sistemas-pedidos-reservas",
+    title: "Pedidos y Reservas",
     description:
-      "Digitalizamos procesos como reservas, pedidos, cotizaciones, catálogos y atención al cliente mediante soluciones diseñadas específicamente para la forma en que funciona tu negocio.",
-    icon: Layout,
+      "Sistemas personalizados para gestionar reservas, pedidos, horarios y solicitudes desde una plataforma digital.",
+    icon: CalendarDays,
+    planKey: "reservas",
   },
   {
     id: "automatizacion-ia",
     title: "Automatización e IA",
     description:
-      "Implementamos automatizaciones y soluciones con inteligencia artificial para atender clientes, gestionar información, reducir tareas repetitivas y agilizar procesos dentro de tu negocio.",
+      "Automatizamos tareas repetitivas e integramos asistentes inteligentes para mejorar la atención y los procesos de tu negocio.",
     icon: Bot,
+    planKey: "automatizacion",
+  },
+  {
+    id: "aplicaciones-web",
+    title: "Aplicaciones Web",
+    description:
+      "Aplicaciones para administrar clientes, información y operaciones empresariales desde distintos dispositivos.",
+    icon: MonitorSmartphone,
+    pricingLabel: "Cotización personalizada",
+  },
+  {
+    id: "software-medida",
+    title: "Software a Medida",
+    description:
+      "Sistemas desarrollados según tus procesos reales, con funcionalidades, integraciones y módulos definidos para cada proyecto.",
+    icon: Code2,
+    planKey: "softwareMedida",
   },
 ];
