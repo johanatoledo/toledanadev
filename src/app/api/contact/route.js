@@ -210,7 +210,7 @@ export async function POST(request) {
       );
     }
 
-    console.info( "[CONTACT_EMAIL_SENT]", { id: data?.id, service, } );
+    
 
     return NextResponse.json(
       {
