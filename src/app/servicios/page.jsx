@@ -33,34 +33,8 @@ export default function ServicesPage() {
       </header>
 
       <Services />
-
-      <aside
-        aria-label="Información sobre precios y contratación"
-        className="border-t border-toledana-black/10 bg-secundary px-5 py-10 dark:border-primary/15 dark:bg-toledana-black"
-      >
-        <div className="mx-auto max-w-5xl space-y-3 text-center text-sm leading-7 text-toledana-black/70 dark:text-toledana-white/70">
-          <p>
-            <strong className="text-toledana-black dark:text-toledana-white">
-              Precios expresados en dólares estadounidenses (USD).
-            </strong>{" "}
-            Para pagos en soles (PEN), se aplicará el tipo de cambio
-            de venta de la entidad de referencia indicada en la
-            cotización, vigente al confirmar cada pago.
-          </p>
-
-          <p>
-            Los precios corresponden al alcance establecido
-            para cada servicio. Dominio, alojamiento, mantenimiento,
-            licencias e integraciones externas se presupuestan
-            por separado, salvo indicación expresa.
-          </p>
-
-          <p>
-            La contratación está sujeta a confirmación de requisitos,
-            condiciones comerciales y tratamiento tributario aplicable.
-          </p>
-        </div>
-      </aside>
-    </div>
-  );
-}
+       
+      
+     </div>
+      );
+  }
