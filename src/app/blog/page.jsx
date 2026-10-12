@@ -139,7 +139,7 @@ export default function BlogPage() {
             </p>
 
             <Link
-              href="/#contact"
+              href="/contacto"
               className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-primary px-7 py-3 font-semibold text-toledana-black transition-transform duration-300 hover:scale-[1.03] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-4 focus:ring-offset-toledana-black"
             >
               Cuéntanos sobre tu proyecto
