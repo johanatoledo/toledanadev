@@ -1,9 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { FaWhatsapp } from 'react-icons/fa';
+
 
 export default function ProjectShowcase({ projects }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,13 +24,7 @@ export default function ProjectShowcase({ projects }) {
     );
   };
 
-  const whatsappNumber = "51932297805";
 
-  const whatsappMessage = `¡Hola! Me gustaría obtener más información sobre el proyecto: ${project.title}`;
-
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    whatsappMessage
-  )}`;
 
   return (
     
@@ -141,15 +136,14 @@ export default function ProjectShowcase({ projects }) {
             {/* Acciones */}
             <div className="flex flex-col sm:flex-row gap-3">
 
-              <a
-                href={whatsappUrl}
+              <Link
+                href="/contacto"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-black font-semibold hover:brightness-110 transition-all duration-300"
               >
-                <FaWhatsapp size={18} />
                 Quiero algo similar
-              </a>
+              </Link>
 
               
 

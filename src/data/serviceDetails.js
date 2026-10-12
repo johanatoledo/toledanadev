@@ -1,7 +1,6 @@
 
 export const serviceDetails = {
   "catalogos-digitales": {
-    subtitle: "Nuestra especialidad",
     introduction:
       "Transforma tus productos en un catálogo digital personalizado. Muestra tu inventario de forma profesional, organiza tus categorías y facilita los pedidos por WhatsApp o desde una plataforma administrable.",
     benefits: [
@@ -16,7 +15,7 @@ export const serviceDetails = {
         description: "Para emprendedores que desean comenzar.",
         features: [
           "Diseño personalizado y responsive",
-          "Hasta 30 productos cargados inicialmente",
+          "Hasta 50 productos cargados inicialmente",
           "Categorías y fichas de producto",
           "Consultas y pedidos por WhatsApp",
           "SEO técnico básico",
@@ -64,6 +63,106 @@ export const serviceDetails = {
           "Facturación electrónica SUNAT",
           "Integraciones logísticas externas",
           "Agentes IA y pagos online",
+        ],
+      },
+    ],
+  },
+
+  
+  "menus-digitales-restaurantes": {
+    subtitle: "Menús QR personalizados para restaurantes",
+
+    introduction:
+      "Digitaliza la carta de tu restaurante con un menú QR personalizado. Presenta platos, bebidas, precios y promociones desde cualquier dispositivo, con opciones de administración y gestión de pedidos según las necesidades de tu negocio.",
+
+    benefits: [
+      "Tus clientes pueden consultar el menú escaneando un código QR.",
+      "Presenta platos, fotografías, precios y categorías de forma organizada.",
+      "Evita reimprimir cartas cada vez que cambien tus productos.",
+      "Facilita la atención en mesas y los pedidos para llevar.",
+      "Ofrece una experiencia adaptada a celulares y tablets.",
+    ],
+
+    plans: [
+      {
+        key: "menuEsencial",
+        description:
+          "Para restaurantes y cafeterías que necesitan una carta digital profesional.",
+
+        features: [
+          "Diseño personalizado con la identidad del restaurante",
+          "Menú digital responsive",
+          "Hasta 40 platos y bebidas cargados inicialmente",
+          "Categorías, fotografías, descripciones y precios",
+          "Código QR descargable para compartir e imprimir",
+          "Enlace directo al menú digital",
+          "Botón de contacto por WhatsApp",
+          "SEO técnico básico",
+          "Dos rondas de revisión",
+        ],
+
+        exclusions: [
+          "Panel administrativo",
+          "Gestión de pedidos desde la plataforma",
+          "Control de inventario",
+          "Pasarela de pagos",
+          "Actualización ilimitada de platos y precios",
+        ],
+      },
+
+      {
+        key: "menuProfesional",
+        description:
+          "Para restaurantes que necesitan actualizar su carta de manera independiente.",
+
+        featured: true,
+
+        features: [
+          "Todo lo incluido en Menú QR Esencial",
+          "Panel administrativo protegido",
+          "Hasta 60 platos y bebidas cargados inicialmente",
+          "Crear, editar y desactivar productos",
+          "Administrar categorías y precios",
+          "Actualizar fotografías y descripciones",
+          "Controlar la disponibilidad de platos",
+          "Código QR descargable",
+          "Capacitación inicial para utilizar el panel",
+        ],
+
+        exclusions: [
+          "Sistema interno de gestión de pedidos",
+          "Pasarela de pagos",
+          "Control avanzado de inventario",
+          "Facturación electrónica",
+          "Integración con sistemas POS",
+        ],
+      },
+
+      {
+        key: "menuBusiness",
+        description:
+          "Para restaurantes que desean recibir y administrar pedidos mediante su menú digital.",
+
+        features: [
+          "Todo lo incluido en Menú QR Profesional",
+          "Hasta 100 platos y bebidas cargados inicialmente",
+          "Carrito de pedidos",
+          "Identificación de mesa mediante código QR",
+          "Opciones de pedido en mesa o para llevar",
+          "Registro de pedidos en base de datos",
+          "Panel administrativo de pedidos",
+          "Estados de preparación y entrega",
+          "Historial básico de pedidos",
+          "Capacitación para el personal administrador",
+        ],
+
+        exclusions: [
+          "Integración con impresoras de cocina",
+          "Facturación electrónica SUNAT",
+          "Integración con sistemas POS externos",
+          "Pasarela de pagos online",
+          "Gestión avanzada de inventario",
+          "Agentes de inteligencia artificial",
         ],
       },
     ],
@@ -197,7 +296,7 @@ export const serviceDetails = {
           "Opciones básicas de entrega o recojo",
         ],
         exclusions: [
-          "Facturación SUNAT",
+          "Facturación electrónica",
           "Integración de impresoras POS",
           "Gestión logística externa",
         ],

@@ -45,7 +45,6 @@ export function createContactEmail({ name, email, business, service, plan = "", 
     createRow("Correo electrónico", email),
     createRow( "Empresa o negocio", business || "No especificado" ),
     createRow( "Servicio", getServiceName(service) ),
-    createRow( "Plan", plan || "No especificado" ),
   ];
 
   if (selectedPlan) {

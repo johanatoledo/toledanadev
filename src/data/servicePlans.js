@@ -1,5 +1,6 @@
 
 export const SERVICE_PLANS = {
+  // CATÁLOGOS DIGITALES
   catalogoEsencial: {
     id: "catalogo-esencial",
     name: "Catálogo Esencial",
@@ -21,6 +22,31 @@ export const SERVICE_PLANS = {
     pricingType: "fixed",
     billing: "one-time",
   },
+
+  // MENÚS DIGITALES PARA RESTAURANTES
+  menuEsencial: {
+    id: "menu-qr-esencial",
+    name: "Menú QR Esencial",
+    priceUSD: 199,
+    pricingType: "fixed",
+    billing: "one-time",
+  },
+  menuProfesional: {
+    id: "menu-qr-profesional",
+    name: "Menú QR Profesional",
+    priceUSD: 449,
+    pricingType: "fixed",
+    billing: "one-time",
+  },
+  menuBusiness: {
+    id: "restaurante-digital-business",
+    name: "Restaurante Digital Business",
+    priceUSD: 999,
+    pricingType: "from",
+    billing: "one-time",
+  },
+
+  // PÁGINAS WEB
   landingPage: {
     id: "landing-page",
     name: "Landing Page",
@@ -42,6 +68,8 @@ export const SERVICE_PLANS = {
     pricingType: "fixed",
     billing: "one-time",
   },
+
+  // COMERCIO ELECTRÓNICO
   ecommerce: {
     id: "ecommerce",
     name: "Tienda Online",
@@ -49,6 +77,8 @@ export const SERVICE_PLANS = {
     pricingType: "from",
     billing: "one-time",
   },
+
+  // PEDIDOS Y RESERVAS
   reservas: {
     id: "reservas",
     name: "Sistema de Reservas",
@@ -63,6 +93,8 @@ export const SERVICE_PLANS = {
     pricingType: "from",
     billing: "one-time",
   },
+
+  // INTELIGENCIA ARTIFICIAL Y AUTOMATIZACIÓN
   agenteIA: {
     id: "agente-ia",
     name: "Agente IA",
@@ -84,6 +116,8 @@ export const SERVICE_PLANS = {
     pricingType: "from",
     billing: "one-time",
   },
+
+  // SOFTWARE A MEDIDA
   softwareMedida: {
     id: "software-medida",
     name: "Software a Medida",

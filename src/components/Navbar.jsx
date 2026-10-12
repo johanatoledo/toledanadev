@@ -46,7 +46,12 @@ export default function Navbar() {
   return (
     <>
       {/* Navbar principal */}
-      <nav className="fixed top-0 left-0 z-40 flex w-full items-center justify-between border-b border-gray-100 bg-toledana-white/80 px-4 py-1.5 text-black shadow-sm backdrop-blur-md transition-colors duration-300 sm:px-6 dark:border-gray-900 dark:bg-toledana-black/10 dark:text-secundary">
+      
+     <nav
+        aria-label="Navegación principal"
+        className="fixed inset-x-0 top-0 z-30 flex h-20 w-full items-center justify-between border-b border-toledana-black/10 bg-toledana-white/95 px-4 text-toledana-black shadow-sm backdrop-blur-md transition-colors duration-300 sm:px-6 dark:border-primary/10 dark:bg-toledana-black/95 dark:text-toledana-white"
+      >
+
         {/* Logo */}
         <Link
           href="/"

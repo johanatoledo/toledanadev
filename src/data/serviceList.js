@@ -1,5 +1,14 @@
 
-import { BookOpen, Globe, ShoppingBag, CalendarDays, Bot, MonitorSmartphone, Code2, } from "lucide-react";
+import {
+  BookOpen,
+  UtensilsCrossed,
+  Globe,
+  ShoppingBag,
+  CalendarDays,
+  Bot,
+  MonitorSmartphone,
+  Code2,
+} from "lucide-react";
 
 export const servicesList = [
   {
@@ -10,6 +19,15 @@ export const servicesList = [
     icon: BookOpen,
     planKey: "catalogoEsencial",
     featured: true,
+  },
+  {
+    id: "menus-digitales-restaurantes",
+    title: "Menús Digitales para Restaurantes",
+    description:
+      "Menús digitales personalizados con código QR para restaurantes, cafeterías y negocios gastronómicos. Ofrecemos cartas digitales con o sin panel administrativo y sistemas de pedidos por mesa o para llevar.",
+    icon: UtensilsCrossed,
+    planKey: "menuEsencial",
+    featured: false,
   },
   {
     id: "paginas-web",

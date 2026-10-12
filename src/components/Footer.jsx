@@ -2,13 +2,10 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa';
 
 
 export default function Footer() {
-   const whatsappNumber = "51932297805"; 
-   const mensajeCustom = `¡Hola, ToledanaDev! Estuve viendo su página web y me gustaría recibir información sobre sus soluciones digitales para mi negocio.`
-   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensajeCustom)}`;
    const facebookUrl="https://web.facebook.com/profile.php?id=61594431353298";
    const tiktokUrl="https://www.tiktok.com/@soytoledana?_r=1&_t=ZS-99bm9Lf7LBV";
    const instagramUrl="https://www.instagram.com/johanatoledo1990"
@@ -18,7 +15,6 @@ export default function Footer() {
   const socialLinks = [
     { name: 'Facebook', href: `${facebookUrl}`, icon: <FaFacebookF size={16} /> },
     { name: 'Instagram', href: `${instagramUrl}`, icon: <FaInstagram size={16} /> },
-    { name: 'WhatsApp',  href: `${whatsappUrl}`, icon: <FaWhatsapp size={16} /> },
     { name: 'TikTok', href: `${tiktokUrl}`, icon: <FaTiktok size={16} /> },
   ];
 
