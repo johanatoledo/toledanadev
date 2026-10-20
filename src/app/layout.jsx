@@ -51,6 +51,11 @@ export const metadata = {
   creator: "ToledanaDev",
   publisher: "ToledanaDev",
 
+   // Verificación del dominio en Pinterest
+  other: {
+    "p:domain_verify": "8112762bc9bad1cb71eaf6465af11891",
+  },
+
   robots: {
     index: true,
     follow: true,
