@@ -27,8 +27,8 @@ const articles = [
     description:
             "Aprende a identificar cuándo seguir vendiendo por WhatsApp y cuándo dar el siguiente paso hacia un catálogo digital, ecommerce o sistema personalizado.",
     href: "/blog/whatsapp-catalogo-digital-tienda-online",
-    date: " 26 de octubre de 2026",
-    dateTime: "2026-10-26",
+    date: " 10 de Noviembre de 2026",
+    dateTime: "2026-11-10",
   },
 ];
 

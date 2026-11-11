@@ -1,6 +1,10 @@
-import { solutions } from "../que-es-un-sistema-digital-para-negocios/_data/solutionData";
+export default function NeedsSystemSection({
+  signs = [],
+}) {
+  if (!signs.length) {
+    return null;
+  }
 
-export default function NeedsSystemSection() {
   return (
     <section aria-labelledby="necesita-sistema-digital">
       <h2
@@ -10,13 +14,13 @@ export default function NeedsSystemSection() {
         ¿Cómo saber si mi negocio necesita un sistema digital?
       </h2>
 
-      <p className="mt-6 max-w-3xl text-base leading-8 text-black/70 dark:text-white/70 sm:text-lg">
+      <p className="mt-6 max-w-3xl text-base leading-8 text-black/70 sm:text-lg dark:text-white/70">
         No se trata simplemente de incorporar tecnología. El objetivo debe ser
         resolver un problema concreto dentro de la operación del negocio.
       </p>
 
       <ul className="mt-8 max-w-3xl space-y-4">
-        {solutions.map((sign) => (
+        {signs.map((sign) => (
           <li
             key={sign}
             className="flex gap-4 rounded-2xl bg-black/3 p-5 dark:bg-white/4"

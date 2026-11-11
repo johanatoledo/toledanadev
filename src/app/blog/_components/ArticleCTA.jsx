@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-export default function ArticleCTA({ title, description, href, label, }) {
+export default function ArticleCTA({
+  title = "¿Quieres mejorar un proceso de tu negocio?",
+  description = "Cuéntanos qué necesitas mejorar y te ayudaremos a identificar la solución digital adecuada.",
+  href = "/contacto",
+  label = "Contactar",
+}) {
   return (
     <aside className="rounded-3xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
       <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
