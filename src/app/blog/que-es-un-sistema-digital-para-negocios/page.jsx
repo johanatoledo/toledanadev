@@ -1,14 +1,10 @@
-import ArticleHeader from "./_components/ArticleHeader";
-import ArticleSection from "./_components/ArticleSection";
-import ComparisonSection from "./_components/ComparisonSection";
-import ProcessesSection from "./_components/ProcessesSection";
-import RestaurantExample from "./_components/RestaurantExample";
-import BusinessTypesSection from "./_components/BusinessTypesSection";
-import NeedsSystemSection from "./_components/NeedsSystemSection";
-import PersonalizationSection from "./_components/PersonalizationSection";
-import ToledanaDevSection from "./_components/ToledanaDevSection";
-import FAQSection from "./_components/FAQSection";
-import ArticleCTA from "./_components/ArticleCTA";
+import ArticleHeader from "../_components/ArticleHeader";
+import ArticleSection from "../_components/ArticleSection";
+import RestaurantExample from "../_components/RestaurantExample";
+import NeedsSystemSection from "../_components/NeedsSystemSection";
+import PersonalizationSection from "../_components/PersonalizationSection";
+import ToledanaDevSection from "../_components/ToledanaDevSection";
+import ArticleCTA from "../_components/ArticleCTA";
 
 export const metadata = {
   title: "¿Qué es un sistema digital para negocios?",
@@ -53,21 +49,13 @@ export default function SistemaDigitalNegociosPage() {
               </p>
             </ArticleSection>
 
-            <ComparisonSection />
-
-            <ProcessesSection />
-
             <RestaurantExample />
-
-            <BusinessTypesSection />
 
             <NeedsSystemSection />
 
             <PersonalizationSection />
 
             <ToledanaDevSection />
-
-            <FAQSection />
 
             <ArticleCTA />
           </div>
