@@ -20,6 +20,16 @@ const articles = [
     date: "30 de septiembre de 2026",
     dateTime: "2026-09-30",
   },
+   {
+    id: "catalogo-digital-tienda-online-sistemas",
+    category: "Digitalización",
+    title: "¿WhatsApp es suficiente para vender? Catálogo digital vs tienda online",
+    description:
+            "Aprende a identificar cuándo seguir vendiendo por WhatsApp y cuándo dar el siguiente paso hacia un catálogo digital, ecommerce o sistema personalizado.",
+    href: "/blog/whatsapp-catalogo-digital-tienda-online",
+    date: " 26 de octubre de 2026",
+    dateTime: "2026-10-26",
+  },
 ];
 
 export default function BlogPage() {

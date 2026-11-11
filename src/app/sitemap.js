@@ -87,6 +87,7 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+
      {
       url: `${baseUrl}/herramientas`,
       lastModified: new Date(),
@@ -96,6 +97,12 @@ export default function sitemap() {
     {
       url: `${baseUrl}/herramientas/calculadora-de-precios`,
       lastModified: new Date("2026-10-10"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/whatsapp-catalogo-digital-tienda-online`,
+      lastModified: new Date("2026-11-10"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
