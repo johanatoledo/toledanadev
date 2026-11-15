@@ -1,11 +1,46 @@
+
 import Link from "next/link";
 
+const BLOG_URL = "https://www.toledanadev.com/blog";
+
+const BLOG_TITLE = "Blog y recursos para digitalizar negocios";
+
+const BLOG_DESCRIPTION =
+  "Aprende sobre sistemas digitales, automatización, desarrollo web, inteligencia artificial y soluciones tecnológicas para mejorar los procesos de tu negocio.";
+
+const BLOG_IMAGE = "/branding/toledanadev-og.webp";
+
 export const metadata = {
-  title: "Blog y recursos para digitalizar negocios",
-  description:
-    "Aprende sobre sistemas digitales, automatización, desarrollo web, inteligencia artificial y soluciones tecnológicas para mejorar los procesos de tu negocio.",
+  title: BLOG_TITLE,
+
+  description: BLOG_DESCRIPTION,
+
   alternates: {
-    canonical: "https://www.toledanadev.com/blog",
+    canonical: BLOG_URL,
+  },
+
+  openGraph: {
+    title: `${BLOG_TITLE} | ToledanaDev`,
+    description: BLOG_DESCRIPTION,
+    url: BLOG_URL,
+    siteName: "ToledanaDev",
+    locale: "es_PE",
+    type: "website",
+    images: [
+      {
+        url: BLOG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "ToledanaDev - Desarrollo Web y Software a Medida",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: `${BLOG_TITLE} | ToledanaDev`,
+    description: BLOG_DESCRIPTION,
+    images: [BLOG_IMAGE],
   },
 };
 
@@ -20,21 +55,21 @@ const articles = [
     date: "30 de septiembre de 2026",
     dateTime: "2026-09-30",
   },
-   {
+  {
     id: "catalogo-digital-tienda-online-sistemas",
     category: "Digitalización",
     title: "¿WhatsApp es suficiente para vender? Catálogo digital vs tienda online",
     description:
-            "Aprende a identificar cuándo seguir vendiendo por WhatsApp y cuándo dar el siguiente paso hacia un catálogo digital, ecommerce o sistema personalizado.",
+      "Aprende a identificar cuándo seguir vendiendo por WhatsApp y cuándo dar el siguiente paso hacia un catálogo digital, ecommerce o sistema personalizado.",
     href: "/blog/whatsapp-catalogo-digital-tienda-online",
-    date: " 10 de Noviembre de 2026",
+    date: "10 de noviembre de 2026",
     dateTime: "2026-11-10",
   },
 ];
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen bg-toledana-white text-toledana-black transition-colors duration-300 dark:bg-transparent dark:text-secundary">
+    <div className="min-h-screen bg-toledana-white text-toledana-black transition-colors duration-300 dark:bg-transparent dark:text-secundary">
       {/* HERO */}
       <header className="border-b border-black/10 dark:border-white/10">
         <div className="mx-auto max-w-6xl px-5 pb-16 pt-32 sm:px-8 sm:pb-20 sm:pt-36 lg:px-10">
@@ -157,6 +192,6 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

@@ -1,14 +1,36 @@
 
 import Services from "@/components/Services";
 
+
 export const metadata = {
-  title: "Servicios digitales, catálogos y desarrollo web",
+  title: "Servicios de Desarrollo Web y Software",
+
   description:
-    "Conoce los servicios y precios de ToledanaDev. Catálogos digitales personalizados con o sin panel administrativo, páginas web, tiendas online, sistemas de pedidos e inteligencia artificial.",
+    "Desarrollamos páginas web, aplicaciones, comercio electrónico y software a medida para digitalizar negocios y optimizar procesos.",
+
   alternates: {
-    canonical: "https://www.toledanadev.com/servicios",
+    canonical: "/servicios",
+  },
+
+  openGraph: {
+    title: "Servicios de Desarrollo Web y Software | ToledanaDev",
+    description:
+      "Soluciones digitales para negocios: desarrollo web, aplicaciones, comercio electrónico y automatización.",
+    url: "/servicios",
+    siteName: "ToledanaDev",
+    locale: "es_PE",
+    type: "website",
+    images: [
+      {
+        url: "/branding/toledanadev-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "Servicios de desarrollo web de ToledanaDev",
+      },
+    ],
   },
 };
+
 
 export default function ServicesPage() {
   return (

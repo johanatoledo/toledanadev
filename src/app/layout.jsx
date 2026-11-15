@@ -1,61 +1,58 @@
+
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./global.css";
+
 import Providers from "./Providers";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
+const SITE_URL = "https://www.toledanadev.com";
+
+const SITE_NAME = "ToledanaDev";
+
+const SITE_TITLE =
+  "ToledanaDev | Desarrollo Web y Software a Medida";
+
+const SITE_DESCRIPTION =
+  "Desarrollo web, aplicaciones y software a medida para negocios que buscan mejorar su presencia digital, automatizar procesos y crecer con tecnología.";
+
+const OG_IMAGE = "/branding/toledanadev-og.webp";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["400", "500", "600"],
   subsets: ["latin"],
   variable: "--font-toledana",
+  display: "swap",
 });
 
-
-
 export const metadata = {
-  metadataBase: new URL("https://www.toledanadev.com"),
+  metadataBase: new URL(SITE_URL),
+
+  applicationName: SITE_NAME,
 
   title: {
-    default: "ToledanaDev | Desarrollo Web y Software a Medida",
-    template: "%s | ToledanaDev",
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
   },
 
-  description:
-    "Desarrollo web, aplicaciones y software a medida para negocios que buscan mejorar su presencia digital, automatizar procesos y crecer con tecnología.",
-
-  keywords: [
-    "desarrollo web",
-    "desarrollo de software",
-    "software a medida",
-    "páginas web",
-    "aplicaciones web",
-    "Next.js",
-    "React",
-    "inteligencia artificial",
-    "automatización",
-    "desarrollo web Perú",
-    "desarrollo web Lima",
-    "soluciones digitales",
-    "catalogos digitales",
-    "tiendas online",
-    "e-commerce",
-  ],
+  description: SITE_DESCRIPTION,
 
   authors: [
     {
-      name: "ToledanaDev",
-      url: "https://www.toledanadev.com",
+      name: SITE_NAME,
+      url: SITE_URL,
     },
   ],
 
-  creator: "ToledanaDev",
-  publisher: "ToledanaDev",
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
 
-   // Verificación del dominio en Pinterest
+  // Verificación del dominio de Pinterest.
   other: {
     "p:domain_verify": "8112762bc9bad1cb71eaf6465af11891",
   },
 
+  // Directivas para los motores de búsqueda.
   robots: {
     index: true,
     follow: true,
@@ -68,21 +65,17 @@ export const metadata = {
     },
   },
 
-  alternates: {
-    canonical: "https://www.toledanadev.com",
-  },
-
+  // Valores sociales compartidos.
   openGraph: {
-    title: "ToledanaDev | Desarrollo Web y Software a Medida",
+    type: "website",
+    locale: "es_PE",
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
     description:
       "Creamos sitios web, aplicaciones y soluciones de software a medida para ayudar a los negocios a crecer y mejorar sus procesos.",
-    url: "https://www.toledanadev.com",
-    siteName: "ToledanaDev",
-    locale: "es_PE",
-    type: "website",
     images: [
       {
-        url: "/branding/toledanadev-og.webp",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: "ToledanaDev - Desarrollo Web y Software a Medida",
@@ -92,24 +85,23 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "ToledanaDev | Desarrollo Web y Software a Medida",
+    title: SITE_TITLE,
     description:
       "Desarrollo web, software a medida, aplicaciones y soluciones digitales para negocios.",
-    images: ["/branding/toledanadev-og.webp"],
+    images: [OG_IMAGE],
   },
-
-  icons: {
-    icon: "/branding/toledana_ico.webp",
-    shortcut: "/branding/toledana_ico.webp",
-    apple: "/branding/toledana_ico.webp",
-  },
+  
+ 
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className={`dark ${plusJakartaSans.variable}`} style={{ colorScheme: 'dark' }}>
+    <html
+      lang="es"
+      className={`dark ${plusJakartaSans.variable}`}
+      style={{ colorScheme: "dark" }}
+    >
       <body className="min-h-screen font-sans antialiased selection:bg-primary/30 bg-toledana-black">
-      
         <Providers>
           <Navbar />
 
