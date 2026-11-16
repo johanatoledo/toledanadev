@@ -1,52 +1,67 @@
+
 "use client";
 
-import { Send,  User, Mail, Building2, MessageSquare, BriefcaseBusiness, LoaderCircle, } from "lucide-react";
+import Link from "next/link";
+import {
+  Send,
+  User,
+  Mail,
+  Building2,
+  MessageSquare,
+  BriefcaseBusiness,
+  LoaderCircle,
+  ShieldCheck,
+} from "lucide-react";
+
 import ContactField from "./ContactField";
 import ContactStatus from "./ContactStatus";
-import { SERVICE_OPTIONS, } from "../_config/contactFormConfig";
-import { CONTACT_LIMITS, } from "../../../lib/contact/contactConstants";
+import SelectedPlanSummary from "./SelectedPlanSummary";
+
+import { SERVICE_OPTIONS } from "../_config/contactFormConfig";
+import { CONTACT_LIMITS } from "../../../lib/contact/contactConstants";
 import { useContactForm } from "../_hooks/useContactForm";
 import { getInputClassName } from "../_utils/contactFormStyles";
-import  SelectedPlanSummary  from "./SelectedPlanSummary";
 
 export default function ContactForm() {
-  const { formData, fieldErrors, status, isSubmitting, selectedPlan, handleChange, handleSubmit, } = useContactForm();
+  const {
+    formData,
+    fieldErrors,
+    status,
+    isSubmitting,
+    selectedPlan,
+    handleChange,
+    handleSubmit,
+  } = useContactForm();
 
   return (
     <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm sm:p-8 dark:border-white/10 dark:bg-white/3">
-      
-     <header className="mb-8">
-       <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+      <header className="mb-8">
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
           {selectedPlan ? "Solicitud de contratación" : "Solicita información"}
-       </p>
+        </p>
 
-     <h2 className="mt-3 font-title text-2xl font-bold text-toledana-black dark:text-toledana-white sm:text-3xl">
-         {selectedPlan ? "Solicita tu plan" : "Cuéntanos sobre tu proyecto"}
-     </h2>
+        <h2 className="mt-3 font-title text-2xl font-bold text-toledana-black dark:text-toledana-white sm:text-3xl">
+          {selectedPlan ? "Solicita tu plan" : "Cuéntanos sobre tu proyecto"}
+        </h2>
 
-     <p className="mt-3 leading-7 text-toledana-black/60 dark:text-toledana-white/60">
-      {selectedPlan
-        ? "Has seleccionado un servicio de ToledanaDev. Completa tus datos para confirmar los requisitos y recibir los pasos de contratación."
-        : "Completa la información para conocer mejor lo que necesitas."}
-     </p>
-   </header>
+        <p className="mt-3 leading-7 text-toledana-black/60 dark:text-toledana-white/60">
+          {selectedPlan
+            ? "Has seleccionado un servicio de ToledanaDev. Completa tus datos para confirmar los requisitos y recibir los pasos de contratación."
+            : "Completa la información para conocer mejor lo que necesitas."}
+        </p>
+      </header>
 
-
-      <form
-        onSubmit={handleSubmit}
-        className="space-y-6"
-      >
-        {/* Honeypot */}
+      <form onSubmit={handleSubmit} className="space-y-6">
         {selectedPlan && (
           <SelectedPlanSummary selection={selectedPlan} />
-         )}
+        )}
+
+        {/* Honeypot anti-bot */}
         <div
           className="absolute -left-[9999px] h-px w-px overflow-hidden"
           aria-hidden="true"
         >
-          <label htmlFor="website">
-            Sitio web
-          </label>
+          <label htmlFor="website">Sitio web</label>
 
           <input
             id="website"
@@ -63,9 +78,7 @@ export default function ContactForm() {
         <ContactField
           id="name"
           label="Nombre"
-          error={
-            fieldErrors.name?.[0]
-          }
+          error={fieldErrors.name?.[0]}
         >
           <div className="relative">
             <User
@@ -84,28 +97,20 @@ export default function ContactForm() {
               maxLength={80}
               autoComplete="name"
               placeholder="Tu nombre"
-              aria-invalid={
-                Boolean(
-                  fieldErrors.name
-                )
-              }
+              aria-invalid={Boolean(fieldErrors.name)}
               aria-describedby={
-                fieldErrors.name
-                  ? "name-error"
-                  : undefined
+                fieldErrors.name ? "name-error" : undefined
               }
-              className={getInputClassName(
-                Boolean( fieldErrors.name )
-              )}
+              className={getInputClassName(Boolean(fieldErrors.name))}
             />
           </div>
         </ContactField>
 
-        {/* Email */}
+        {/* Correo electrónico */}
         <ContactField
           id="email"
           label="Correo electrónico"
-          error={ fieldErrors.email?.[0] }
+          error={fieldErrors.email?.[0]}
         >
           <div className="relative">
             <Mail
@@ -124,19 +129,21 @@ export default function ContactForm() {
               autoComplete="email"
               inputMode="email"
               placeholder="nombre@empresa.com"
-              aria-invalid={ Boolean( fieldErrors.email ) }
-              aria-describedby={ fieldErrors.email ? "email-error" : undefined }
-              className={getInputClassName( Boolean( fieldErrors.email ) )}
+              aria-invalid={Boolean(fieldErrors.email)}
+              aria-describedby={
+                fieldErrors.email ? "email-error" : undefined
+              }
+              className={getInputClassName(Boolean(fieldErrors.email))}
             />
           </div>
         </ContactField>
 
         <div className="grid gap-6 sm:grid-cols-2">
-          {/* Negocio */}
+          {/* Empresa o negocio */}
           <ContactField
             id="business"
             label="Empresa o negocio"
-            error={ fieldErrors.business?.[0] }
+            error={fieldErrors.business?.[0]}
           >
             <div className="relative">
               <Building2
@@ -148,14 +155,16 @@ export default function ContactForm() {
                 id="business"
                 name="business"
                 type="text"
-                value={ formData.business }
-                onChange={ handleChange }
+                value={formData.business}
+                onChange={handleChange}
                 maxLength={120}
                 autoComplete="organization"
                 placeholder="Nombre de tu negocio"
-                aria-invalid={ Boolean( fieldErrors.business ) }
-                aria-describedby={ fieldErrors.business ? "business-error" : undefined }
-                className={getInputClassName( Boolean( fieldErrors.business ) )}
+                aria-invalid={Boolean(fieldErrors.business)}
+                aria-describedby={
+                  fieldErrors.business ? "business-error" : undefined
+                }
+                className={getInputClassName(Boolean(fieldErrors.business))}
               />
             </div>
           </ContactField>
@@ -164,7 +173,7 @@ export default function ContactForm() {
           <ContactField
             id="service"
             label="Servicio de interés"
-            error={ fieldErrors.service?.[0] }
+            error={fieldErrors.service?.[0]}
           >
             <div className="relative">
               <BriefcaseBusiness
@@ -175,24 +184,27 @@ export default function ContactForm() {
               <select
                 id="service"
                 name="service"
-                value={ formData.service }
-                onChange={ handleChange }
+                value={formData.service}
+                onChange={handleChange}
                 required
-                aria-invalid={ Boolean( fieldErrors.service ) }
-                aria-describedby={ fieldErrors.service ? "service-error" : undefined }
-                className={getInputClassName( Boolean( fieldErrors.service ), "appearance-none pr-10 dark:bg-toledana-black" )}
-              >
-                {SERVICE_OPTIONS.map(
-                  (option) => (
-                    <option
-                      key={ option.value || "default" }
-                      value={ option.value }
-                      disabled={ option.value === "" }
-                    >
-                      { option.label }
-                    </option>
-                  )
+                aria-invalid={Boolean(fieldErrors.service)}
+                aria-describedby={
+                  fieldErrors.service ? "service-error" : undefined
+                }
+                className={getInputClassName(
+                  Boolean(fieldErrors.service),
+                  "appearance-none pr-10 dark:bg-toledana-black"
                 )}
+              >
+                {SERVICE_OPTIONS.map((option) => (
+                  <option
+                    key={option.value || "default"}
+                    value={option.value}
+                    disabled={option.value === ""}
+                  >
+                    {option.label}
+                  </option>
+                ))}
               </select>
             </div>
           </ContactField>
@@ -200,76 +212,105 @@ export default function ContactForm() {
 
         {/* Mensaje */}
         {!selectedPlan && (
-        <ContactField
-          id="message"
-          label="¿Qué necesitas?"
-          error={ fieldErrors.message?.[0] }
-        >
-          <div className="relative">
-            <MessageSquare
-              aria-hidden="true"
-              className="absolute left-4 top-4 h-5 w-5 text-black/35 dark:text-white/35"
-            />
-
-            <textarea
-              id="message"
-              name="message"
-              value={ formData.message }
-              onChange={ handleChange }
-              required
-              minLength={20}
-              maxLength={ CONTACT_LIMITS.message.max }
-              rows={6}
-              placeholder="Cuéntanos qué proceso quieres mejorar, automatizar o digitalizar..."
-              aria-invalid={ Boolean( fieldErrors.message ) }
-              aria-describedby={ fieldErrors.message ? "message-error" : "message-counter" }
-              className={getInputClassName( Boolean( fieldErrors.message ), "resize-none" )}
-            />
-          </div>
-
-          <div
-            id="message-counter"
-            className="mt-2 text-right text-xs text-black/40 dark:text-white/40"
+          <ContactField
+            id="message"
+            label="¿Qué necesitas?"
+            error={fieldErrors.message?.[0]}
           >
-            {formData.message.length} /{CONTACT_LIMITS.message.max}
-          </div>
-        </ContactField>
-        )}
-        <ContactStatus
-          status={status}
-        />
+            <div className="relative">
+              <MessageSquare
+                aria-hidden="true"
+                className="absolute left-4 top-4 h-5 w-5 text-black/35 dark:text-white/35"
+              />
 
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                minLength={20}
+                maxLength={CONTACT_LIMITS.message.max}
+                rows={6}
+                placeholder="Cuéntanos qué proceso quieres mejorar, automatizar o digitalizar..."
+                aria-invalid={Boolean(fieldErrors.message)}
+                aria-describedby={
+                  fieldErrors.message
+                    ? "message-error"
+                    : "message-counter"
+                }
+                className={getInputClassName(
+                  Boolean(fieldErrors.message),
+                  "resize-none"
+                )}
+              />
+            </div>
+
+            <div
+              id="message-counter"
+              className="mt-2 text-right text-xs text-black/40 dark:text-white/40"
+            >
+              {formData.message.length} / {CONTACT_LIMITS.message.max}
+            </div>
+          </ContactField>
+        )}
+
+        <ContactStatus status={status} />
+
+        
+          {/* Información sobre privacidad */}
+         <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
+          <div className="flex items-start gap-3">
+           <ShieldCheck
+            aria-hidden="true"
+            className="mt-0.5 h-5 w-5 shrink-0 text-[#007777] dark:text-primary"
+            />
+
+          <div>
+           <p className="text-sm font-semibold text-toledana-black dark:text-toledana-white">
+            Protección de tus datos
+           </p>
+
+           <p className="mt-2 text-xs leading-6 text-toledana-black/65 dark:text-toledana-white/65">
+            En ToledanaDev respetamos tu privacidad. Utilizaremos la información que nos proporciones para atender tu solicitud,evaluar las necesidades de tu proyecto y comunicarnos contigo.
+          </p>
+
+           <p className="mt-2 text-xs leading-6 text-toledana-black/65 dark:text-toledana-white/65">
+            Para conocer cómo tratamos y protegemos tus datos personales,consulta nuestra{" "}
+            <Link
+             href="/politica-de-privacidad"
+             className="font-semibold text-[#007777] underline underline-offset-4 transition-colors hover:text-toledana-black dark:text-primary dark:hover:text-toledana-white"
+            >
+             Política de privacidad
+            </Link>
+            .
+           </p>
+         </div>
+        </div> 
+       </div>
+
+        {/* Enviar formulario */}
         <button
           type="submit"
           disabled={isSubmitting}
-          aria-disabled={
-            isSubmitting
-          }
+          aria-disabled={isSubmitting}
           className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 font-bold text-toledana-black transition-all duration-300 hover:scale-[1.01] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100 dark:focus:ring-offset-toledana-black"
         >
           {isSubmitting ? (
-        <>
-          <LoaderCircle
-           aria-hidden="true"
-            className="h-5 w-5 animate-spin"
-          />
-             Enviando...
-       </>
+            <>
+              <LoaderCircle
+                aria-hidden="true"
+                className="h-5 w-5 animate-spin"
+              />
+              Enviando...
+            </>
           ) : (
-        <>
-         {selectedPlan ? "Solicitar este plan" : "Enviar solicitud"}
-
-       <Send
-         aria-hidden="true"
-         className="h-5 w-5"
-        />
-     </>
-    )}
+            <>
+              {selectedPlan ? "Solicitar este plan" : "Enviar solicitud"}
+              <Send aria-hidden="true" className="h-5 w-5" />
+            </>
+          )}
         </button>
-
-        <p className="text-center text-xs leading-5 text-black/45 dark:text-white/45">
-          Utilizaremos la información únicamente para responder a tu solicitud.
-        </p>
       </form>
     </div>
   );

@@ -1,23 +1,58 @@
+
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 const DarkModeContext = createContext(null);
 
+const STORAGE_KEY = "darkMode";
+
 export function DarkModeProvider({ children }) {
-  const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window !== "undefined") {
-      const savedTheme = localStorage.getItem("darkMode");
-      return savedTheme !== "false";
-    }
+  const [darkMode, setDarkMode] = useState(true);
+  const [initialized, setInitialized] = useState(false);
 
-    return true;
-  });
-
+  
   useEffect(() => {
+    try {
+      const savedTheme = window.localStorage.getItem(STORAGE_KEY);
+
+      setDarkMode(savedTheme !== "false");
+    } catch (error) {
+      console.warn(
+        "No se pudo recuperar la preferencia de apariencia.",
+        error
+      );
+    } finally {
+      setInitialized(true);
+    }
+  }, []);
+
+  
+  useEffect(() => {
+    if (!initialized) return;
+
     document.documentElement.classList.toggle("dark", darkMode);
-    localStorage.setItem("darkMode", String(darkMode));
-  }, [darkMode]);
+    document.documentElement.style.colorScheme = darkMode
+      ? "dark"
+      : "light";
+
+    try {
+      window.localStorage.setItem(
+        STORAGE_KEY,
+        String(darkMode)
+      );
+    } catch (error) {
+      console.warn(
+        "No se pudo guardar la preferencia de apariencia.",
+        error
+      );
+    }
+  }, [darkMode, initialized]);
 
   return (
     <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>

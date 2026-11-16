@@ -100,6 +100,12 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+      {
+      url: `${baseUrl}/politica-de-privacidad`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
     {
       url: `${baseUrl}/blog/whatsapp-catalogo-digital-tienda-online`,
       lastModified: new Date("2026-11-10"),
