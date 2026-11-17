@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 
 import ArticleHeader from "../_components/ArticleHeader";
@@ -15,8 +16,7 @@ const articleUrl =
   "https://www.toledanadev.com/blog/whatsapp-catalogo-digital-tienda-online";
 
 export const metadata = {
-  title:
-    "¿WhatsApp es suficiente para vender? Catálogo digital vs tienda online",
+  title: "¿WhatsApp es suficiente para vender? Catálogo digital vs tienda online",
 
   description:
     "Descubre cuándo WhatsApp es suficiente para vender y cuándo tu negocio necesita un catálogo digital, una tienda online o un sistema personalizado.",
@@ -26,8 +26,7 @@ export const metadata = {
   },
 
   openGraph: {
-    title:
-      "¿WhatsApp es suficiente para vender? Catálogo digital vs tienda online",
+    title: "¿WhatsApp es suficiente para vender? Catálogo digital vs tienda online",
     description:
       "Aprende cuándo seguir vendiendo por WhatsApp y cuándo dar el siguiente paso hacia un catálogo digital, ecommerce o sistema personalizado.",
     url: articleUrl,
@@ -36,33 +35,27 @@ export const metadata = {
     type: "article",
     images: [
       {
-        url:
-          "/blog/whatsapp-catalogo-tienda-online-og.webp",
+        url: "/blog/whatsapp-catalogo-tienda-online-og.webp",
         width: 1200,
         height: 630,
-        alt:
-          "WhatsApp, catálogo digital y tienda online para negocios",
+        alt: "WhatsApp, catálogo digital y tienda online para negocios",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title:
-      "¿WhatsApp es suficiente para vender?",
+    title: "¿WhatsApp es suficiente para vender?",
     description:
       "Descubre cuándo tu negocio necesita pasar de WhatsApp a un catálogo, ecommerce o sistema digital.",
-    images: [
-      "/blog/whatsapp-catalogo-tienda-online-og.webp",
-    ],
+    images: ["/blog/whatsapp-catalogo-tienda-online-og.webp"],
   },
 };
 
 const articleJsonLd = {
   "@context": "https://schema.org",
-  
   "@type": "BlogPosting",
-  
+
   headline: articleData.title,
 
   description:
@@ -76,7 +69,6 @@ const articleJsonLd = {
   },
 
   datePublished: "2026-10-26",
-
   dateModified: "2026-10-26",
 
   author: {
@@ -97,7 +89,6 @@ const articleJsonLd = {
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
-
   "@type": "BreadcrumbList",
 
   itemListElement: [
@@ -105,23 +96,18 @@ const breadcrumbJsonLd = {
       "@type": "ListItem",
       position: 1,
       name: "Inicio",
-      item:
-        "https://www.toledanadev.com",
+      item: "https://www.toledanadev.com",
     },
-
     {
       "@type": "ListItem",
       position: 2,
       name: "Blog",
-      item:
-        "https://www.toledanadev.com/blog",
+      item: "https://www.toledanadev.com/blog",
     },
-
     {
       "@type": "ListItem",
       position: 3,
-      name:
-        "WhatsApp, catálogo digital o tienda online",
+      name: "WhatsApp, catálogo digital o tienda online",
       item: articleUrl,
     },
   ],
@@ -152,15 +138,19 @@ export default function WhatsAppCatalogoTiendaArticlePage() {
   } = articleData;
 
   return (
-    <main className="min-h-screen bg-toledana-white text-toledana-black transition-colors duration-300 dark:bg-toledana-black dark:text-toledana-white">
+    <div className="min-h-screen bg-toledana-white text-toledana-black transition-colors duration-300 dark:bg-toledana-black dark:text-toledana-white">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify( articleJsonLd ), }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleJsonLd).replace(/</g, "\\u003c"),
+        }}
       />
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify( breadcrumbJsonLd ),}}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c"),
+        }}
       />
 
       <ArticleHeader
@@ -173,9 +163,7 @@ export default function WhatsAppCatalogoTiendaArticlePage() {
       <article className="mx-auto max-w-4xl space-y-16 px-5 py-14 sm:px-8 sm:py-20">
         <section className="space-y-5 text-lg leading-8 text-black/70 dark:text-white/70">
           {intro.map((paragraph) => (
-            <p key={paragraph}>
-              {paragraph}
-            </p>
+            <p key={paragraph}>{paragraph}</p>
           ))}
 
           <blockquote className="rounded-2xl border-l-4 border-primary bg-primary/5 p-6 font-medium text-black dark:text-white">
@@ -187,15 +175,14 @@ export default function WhatsAppCatalogoTiendaArticlePage() {
           id="vender-por-whatsapp"
           title={whatsappEnough.title}
         >
-          {whatsappEnough.paragraphs.map( (paragraph) => ( <p key={paragraph}> {paragraph} </p> )
-          )}
+          {whatsappEnough.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
 
-          <ArticleList
-            items={ whatsappEnough.items }
-          />
+          <ArticleList items={whatsappEnough.items} />
 
           <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5 font-semibold text-black dark:text-white">
-            { whatsappEnough.highlight }
+            {whatsappEnough.highlight}
           </div>
         </ArticleSection>
 
@@ -204,21 +191,19 @@ export default function WhatsAppCatalogoTiendaArticlePage() {
           title={whatsappProblem.title}
         >
           <div className="grid gap-3 sm:grid-cols-2">
-            {whatsappProblem.questions.map(
-              (question) => (
-                <div
-                  key={question}
-                  className="rounded-xl border border-black/10 p-4 dark:border-white/10"
-                >
-                  {question}
-                </div>
-              )
-            )}
+            {whatsappProblem.questions.map((question) => (
+              <div
+                key={question}
+                className="rounded-xl border border-black/10 p-4 dark:border-white/10"
+              >
+                {question}
+              </div>
+            ))}
           </div>
 
-          {whatsappProblem.paragraphs.map(
-            (paragraph) => ( <p key={paragraph}> {paragraph} </p> )
-          )}
+          {whatsappProblem.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </ArticleSection>
 
         <ArticleSection
@@ -226,20 +211,18 @@ export default function WhatsAppCatalogoTiendaArticlePage() {
           title={warningSigns.title}
         >
           <div className="space-y-5">
-            {warningSigns.items.map(
-              (item) => (
-                <article
-                  key={item.title}
-                  className="rounded-2xl border border-black/10 p-5 dark:border-white/10"
-                >
-                  <h3 className="font-title text-lg font-bold text-black dark:text-white">
-                    {item.title}
-                  </h3>
+            {warningSigns.items.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-2xl border border-black/10 p-5 dark:border-white/10"
+              >
+                <h3 className="font-title text-lg font-bold text-black dark:text-white">
+                  {item.title}
+                </h3>
 
-                  <p className="mt-3"> { item.description } </p>
-                </article>
-              )
-            )}
+                <p className="mt-3">{item.description}</p>
+              </article>
+            ))}
           </div>
         </ArticleSection>
 
@@ -247,105 +230,73 @@ export default function WhatsAppCatalogoTiendaArticlePage() {
           id="whatsapp-business"
           title={whatsappBusiness.title}
         >
-          {whatsappBusiness.paragraphs.map(
-            (paragraph) => ( <p key={paragraph}> {paragraph} </p>
-            )
-          )}
+          {whatsappBusiness.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
 
-          <ArticleList
-            items={ whatsappBusiness.items }
-          />
+          <ArticleList items={whatsappBusiness.items} />
         </ArticleSection>
 
         <ArticleSection
           id="catalogo-digital"
           title={catalog.title}
         >
-          {catalog.paragraphs.map(
-            (paragraph) => (
-              <p key={paragraph}>
-                {paragraph}
-              </p>
-            )
-          )}
+          {catalog.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
 
           <h3 className="font-title text-xl font-bold text-black dark:text-white">
             Qué puede hacer el cliente
           </h3>
 
-          <ArticleList
-            items={catalog.capabilities}
-          />
+          <ArticleList items={catalog.capabilities} />
 
           <h3 className="font-title text-xl font-bold text-black dark:text-white">
             Negocios donde puede funcionar especialmente bien
           </h3>
 
-          <ArticleList
-            items={catalog.businesses}
-          />
+          <ArticleList items={catalog.businesses} />
         </ArticleSection>
 
         <ArticleSection
           id="tienda-online"
           title={ecommerce.title}
         >
-          {ecommerce.paragraphs.map(
-            (paragraph) => (
-              <p key={paragraph}>
-                {paragraph}
-              </p>
-            )
-          )}
+          {ecommerce.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
 
           <ProcessStepsSection
-            steps={ecommerce.process.map(
-              (description) => ({
-                title:
-                  description,
-                description: "",
-              })
-            )}
+            steps={ecommerce.process.map((description) => ({
+              title: description,
+              description: "",
+            }))}
           />
 
           <h3 className="font-title text-xl font-bold text-black dark:text-white">
             Una tienda online suele tener sentido cuando
           </h3>
 
-          <ArticleList
-            items={
-              ecommerce.whenUseful
-            }
-          />
+          <ArticleList items={ecommerce.whenUseful} />
         </ArticleSection>
 
         <ArticleSection
           id="sistema-digital"
           title={customSystem.title}
         >
-          {customSystem.paragraphs.map(
-            (paragraph) => (
-              <p key={paragraph}>
-                {paragraph}
-              </p>
-            )
-          )}
+          {customSystem.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
 
-          <ArticleList
-            items={
-              customSystem.items
-            }
-          />
+          <ArticleList items={customSystem.items} />
 
           <p>
-            Si quieres profundizar en
-            este concepto, puedes leer{" "}
+            Si quieres profundizar en este concepto, puedes leer{" "}
             <Link
               href="/blog/que-es-un-sistema-digital-para-negocios"
               className="font-semibold text-primary underline-offset-4 hover:underline"
             >
-              qué es un sistema digital
-              para negocios
+              qué es un sistema digital para negocios
             </Link>
             .
           </p>
@@ -355,18 +306,14 @@ export default function WhatsAppCatalogoTiendaArticlePage() {
           id="comparacion"
           title="WhatsApp, catálogo, ecommerce o sistema: comparación rápida"
         >
-          <ComparisonSection
-            items={comparison}
-          />
+          <ComparisonSection items={comparison} />
         </ArticleSection>
 
         <ArticleSection
           id="ejemplos"
           title="Cómo cambia la solución según el tipo de negocio"
         >
-          <BusinessExamplesSection
-            examples={examples}
-          />
+          <BusinessExamplesSection examples={examples} />
         </ArticleSection>
 
         <ArticleSection
@@ -374,30 +321,20 @@ export default function WhatsAppCatalogoTiendaArticlePage() {
           title="Entonces, ¿cuál necesita tu negocio?"
         >
           <p>
-            La respuesta depende menos
-            del tamaño de tu empresa y
-            más de tus procesos.
+            La respuesta depende menos del tamaño de tu empresa y más de tus
+            procesos.
           </p>
 
           <p>
-            Para detectar dónde existe
-            una oportunidad real de
-            digitalización, empieza por
-            responder estas preguntas:
+            Para detectar dónde existe una oportunidad real de digitalización,
+            empieza por responder estas preguntas:
           </p>
 
-          <ArticleList
-            items={
-              diagnosisQuestions
-            }
-          />
+          <ArticleList items={diagnosisQuestions} />
 
           <p>
-            No siempre necesitas empezar
-            con un sistema grande.
-            Muchas veces el mejor camino
-            es resolver primero el
-            proceso que más tiempo
+            No siempre necesitas empezar con un sistema grande. Muchas veces
+            el mejor camino es resolver primero el proceso que más tiempo
             consume.
           </p>
         </ArticleSection>
@@ -406,72 +343,44 @@ export default function WhatsAppCatalogoTiendaArticlePage() {
           id="automatizacion"
           title={automation.title}
         >
-          {automation.paragraphs.map(
-            (paragraph) => (
-              <p key={paragraph}>
-                {paragraph}
-              </p>
-            )
-          )}
+          {automation.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
 
           <div className="grid gap-4 sm:grid-cols-3">
             <div className="rounded-2xl border border-black/10 p-5 text-center dark:border-white/10">
               <p className="text-2xl font-bold text-primary">
-                {
-                  automation
-                    .calculation
-                    .messages
-                }
+                {automation.calculation.messages}
               </p>
 
-              <p className="mt-2 text-sm">
-                por día
-              </p>
+              <p className="mt-2 text-sm">por día</p>
             </div>
 
             <div className="rounded-2xl border border-black/10 p-5 text-center dark:border-white/10">
               <p className="text-2xl font-bold text-primary">
-                {
-                  automation
-                    .calculation
-                    .timePerMessage
-                }
+                {automation.calculation.timePerMessage}
               </p>
 
-              <p className="mt-2 text-sm">
-                por conversación
-              </p>
+              <p className="mt-2 text-sm">por conversación</p>
             </div>
 
             <div className="rounded-2xl border border-primary/30 bg-primary/5 p-5 text-center">
               <p className="text-2xl font-bold text-primary">
-                {
-                  automation
-                    .calculation
-                    .total
-                }
+                {automation.calculation.total}
               </p>
 
-              <p className="mt-2 text-sm">
-                en atención
-              </p>
+              <p className="mt-2 text-sm">en atención</p>
             </div>
           </div>
         </ArticleSection>
 
         <ArticleSection
           id="automatizar-vs-atencion-humana"
-          title={
-            humanVsAutomation.title
-          }
+          title={humanVsAutomation.title}
         >
-          {humanVsAutomation.paragraphs.map(
-            (paragraph) => (
-              <p key={paragraph}>
-                {paragraph}
-              </p>
-            )
-          )}
+          {humanVsAutomation.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
 
           <div className="grid gap-5 md:grid-cols-2">
             <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6">
@@ -480,11 +389,7 @@ export default function WhatsAppCatalogoTiendaArticlePage() {
               </h3>
 
               <div className="mt-4">
-                <ArticleList
-                  items={
-                    humanVsAutomation.automate
-                  }
-                />
+                <ArticleList items={humanVsAutomation.automate} />
               </div>
             </div>
 
@@ -494,11 +399,7 @@ export default function WhatsAppCatalogoTiendaArticlePage() {
               </h3>
 
               <div className="mt-4">
-                <ArticleList
-                  items={
-                    humanVsAutomation.human
-                  }
-                />
+                <ArticleList items={humanVsAutomation.human} />
               </div>
             </div>
           </div>
@@ -508,16 +409,9 @@ export default function WhatsAppCatalogoTiendaArticlePage() {
           id="como-empezar"
           title="Cómo empezar a digitalizar tu negocio"
         >
-          <p>
-            No necesitas implementar
-            todo al mismo tiempo.
-          </p>
+          <p>No necesitas implementar todo al mismo tiempo.</p>
 
-          <ProcessStepsSection
-            steps={
-              digitizationSteps
-            }
-          />
+          <ProcessStepsSection steps={digitizationSteps} />
         </ArticleSection>
 
         <ArticleSection
@@ -525,44 +419,32 @@ export default function WhatsAppCatalogoTiendaArticlePage() {
           title="¿Cómo saber qué solución es adecuada para tu negocio?"
         >
           <p>
-            No necesitas conocer
-            términos técnicos ni decidir
-            por tu cuenta si debes
-            construir una página web,
-            ecommerce o sistema.
+            No necesitas conocer términos técnicos ni decidir por tu cuenta si
+            debes construir una página web, ecommerce o sistema.
           </p>
 
           <p>
-            Lo importante es explicar
-            cómo funciona actualmente tu
-            negocio, qué tareas haces
-            manualmente, qué problemas
-            se repiten y qué quieres
-            mejorar.
+            Lo importante es explicar cómo funciona actualmente tu negocio,
+            qué tareas haces manualmente, qué problemas se repiten y qué
+            quieres mejorar.
           </p>
 
           <p>
-            En ToledanaDev desarrollamos
-            soluciones digitales
-            adaptadas a procesos reales,
-            desde catálogos digitales y
-            tiendas online hasta sistemas
-            personalizados,
-            automatizaciones e
-            inteligencia artificial.
+            En ToledanaDev desarrollamos soluciones digitales adaptadas a
+            procesos reales, desde catálogos digitales y tiendas online hasta
+            sistemas personalizados, automatizaciones e inteligencia
+            artificial.
           </p>
 
           <p className="font-semibold text-black dark:text-white">
-            La tecnología debe adaptarse
-            al negocio. No al revés.
+            La tecnología debe adaptarse al negocio. No al revés.
           </p>
 
           <Link
             href="/servicios"
             className="inline-flex font-semibold text-primary underline-offset-4 hover:underline"
           >
-            Conoce nuestros servicios
-            digitales →
+            Conoce nuestros servicios digitales →
           </Link>
         </ArticleSection>
 
@@ -570,9 +452,7 @@ export default function WhatsAppCatalogoTiendaArticlePage() {
           id="preguntas-frecuentes"
           title="Preguntas frecuentes"
         >
-          <FAQSection
-            items={faq}
-          />
+          <FAQSection items={faq} />
         </ArticleSection>
 
         <ArticleSection
@@ -580,36 +460,25 @@ export default function WhatsAppCatalogoTiendaArticlePage() {
           title="Convierte WhatsApp en parte de tu sistema, no en todo tu sistema"
         >
           <p>
-            WhatsApp puede seguir siendo
-            uno de los canales más
-            valiosos para hablar con tus
-            clientes.
+            WhatsApp puede seguir siendo uno de los canales más valiosos para
+            hablar con tus clientes.
           </p>
 
           <p>
-            Pero no necesariamente tiene
-            que funcionar como catálogo,
-            sistema de pedidos,
-            inventario, agenda y panel
-            administrativo al mismo
+            Pero no necesariamente tiene que funcionar como catálogo, sistema
+            de pedidos, inventario, agenda y panel administrativo al mismo
             tiempo.
           </p>
 
           <p>
-            Si tu negocio está empezando
-            a crecer y cada vez dedicas
-            más tiempo a tareas
-            repetitivas, probablemente
-            sea momento de evaluar qué
-            procesos puedes digitalizar.
+            Si tu negocio está empezando a crecer y cada vez dedicas más
+            tiempo a tareas repetitivas, probablemente sea momento de evaluar
+            qué procesos puedes digitalizar.
           </p>
 
           <p>
-            El objetivo no es añadir
-            tecnología por añadirla. El
-            objetivo es utilizar la
-            tecnología adecuada para
-            simplificar tu negocio.
+            El objetivo no es añadir tecnología por añadirla. El objetivo es
+            utilizar la tecnología adecuada para simplificar tu negocio.
           </p>
         </ArticleSection>
 
@@ -620,6 +489,6 @@ export default function WhatsAppCatalogoTiendaArticlePage() {
           label="Analizar mi negocio"
         />
       </article>
-    </main>
+    </div>
   );
 }

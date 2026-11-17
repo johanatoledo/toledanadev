@@ -1,83 +1,85 @@
 export default function sitemap() {
   const baseUrl = "https://www.toledanadev.com";
 
+  
+  const lastSiteUpdate = new Date("2026-11-16");
+
   return [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: lastSiteUpdate,
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: `${baseUrl}/inicio`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-
-    {
       url: `${baseUrl}/servicios`,
-      lastModified: new Date(),
+      lastModified: lastSiteUpdate,
       changeFrequency: "monthly",
       priority: 0.9,
     },
-     {
+    {
       url: `${baseUrl}/servicios/catalogos-digitales`,
-      lastModified: new Date(),
+      lastModified: lastSiteUpdate,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/servicios/menus-digitales-restaurantes`,
-      lastModified: new Date(),
+      lastModified: lastSiteUpdate,
       changeFrequency: "monthly",
       priority: 0.8,
     },
-     {
+    {
       url: `${baseUrl}/servicios/paginas-web`,
-      lastModified: new Date(),
+      lastModified: lastSiteUpdate,
       changeFrequency: "monthly",
       priority: 0.8,
     },
-     {
+    {
       url: `${baseUrl}/servicios/tiendas-online`,
-      lastModified: new Date(),
+      lastModified: lastSiteUpdate,
       changeFrequency: "monthly",
       priority: 0.8,
     },
-     {
+    {
       url: `${baseUrl}/servicios/sistemas-pedidos-reservas`,
-      lastModified: new Date(),
+      lastModified: lastSiteUpdate,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/servicios/automatizacion-ia`,
-      lastModified: new Date(),
+      lastModified: lastSiteUpdate,
       changeFrequency: "monthly",
       priority: 0.8,
     },
-      {
-      url: `${baseUrl}/servicios/aplicaciones-web`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-     {
-      url: `${baseUrl}/servicios/software-medida`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },  
     {
-      url: `${baseUrl}/contacto`,
-      lastModified: new Date(),
+      url: `${baseUrl}/servicios/aplicaciones-web`,
+      lastModified: lastSiteUpdate,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/servicios/software-medida`,
+      lastModified: lastSiteUpdate,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/herramientas`,
+      lastModified: new Date("2026-10-10"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/herramientas/calculadora-de-precios`,
+      lastModified: new Date("2026-10-10"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
+      lastModified: new Date("2026-11-10"),
       changeFrequency: "weekly",
       priority: 0.9,
     },
@@ -87,30 +89,23 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.8,
     },
-
-     {
-      url: `${baseUrl}/herramientas`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/herramientas/calculadora-de-precios`,
-      lastModified: new Date("2026-10-10"),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-      {
-      url: `${baseUrl}/politica-de-privacidad`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
     {
       url: `${baseUrl}/blog/whatsapp-catalogo-digital-tienda-online`,
       lastModified: new Date("2026-11-10"),
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/contacto`,
+      lastModified: lastSiteUpdate,
+      changeFrequency: "yearly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/politica-de-privacidad`,
+      lastModified: new Date("2026-09-01"),
+      changeFrequency: "yearly",
+      priority: 0.3,
     },
   ];
 }
